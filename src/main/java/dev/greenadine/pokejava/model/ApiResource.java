@@ -1,5 +1,6 @@
 package dev.greenadine.pokejava.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -14,12 +15,13 @@ public class ApiResource implements Resource {
 
     private final int id;
     private final String category;
+
     private final String url;
 
-    public ApiResource(final int id, @NotNull final String category) {
-        this.id = id;
-        this.category = category;
-        this.url = getUrl(id, category);
+    public ApiResource(@JsonProperty("url")final String url) {
+        this.id = getIdFromUrl(url);
+        this.category = getCategoryFromUrl(url);
+        this.url = url;
     }
 
     @Override
@@ -33,25 +35,36 @@ public class ApiResource implements Resource {
     }
 
     /**
-     * Gets the partial URL for the resource.
-     * The returned URL is relative to the base URL of the API.
+     * Gets the RESTful API URL for the resource.
      *
-     * @return the API-relative URL for the resource.
+     * @return the RESTful API URL for the resource.
      */
+    @NotNull
     public String getUrl() {
         return url;
     }
 
     /**
-     * Constructs the URL for the resource.
-     * The constructed URL is relative to the base URL of the API.
+     * Gets the ID of the resource from the URL.
      *
-     * @param id the ID of the resource.
-     * @param category the category of the resource.
+     * @param url the URL of the resource.
      *
-     * @return the API-relative URL for the resource.
+     * @return the ID of the resource.
      */
-    private static String getUrl(final int id, @NotNull final String category) {
-        return category + "/" + id + "/";
+    private static int getIdFromUrl(String url) {
+        String[] urlParts = url.split("/");
+        return Integer.parseInt(urlParts[urlParts.length - 1]);
+    }
+
+    /**
+     * Gets the category of the resource from the URL.
+     *
+     * @param url the URL of the resource.
+     *
+     * @return the category of the resource.
+     */
+    private static String getCategoryFromUrl(String url) {
+        String[] urlParts = url.split("/");
+        return urlParts[urlParts.length - 2];
     }
 }

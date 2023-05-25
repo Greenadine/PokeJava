@@ -1,11 +1,24 @@
 package dev.greenadine.pokejava.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+/**
+ * Represents a named resource from the API.
+ *
+ * @since 0.1.0
+ * @see ApiResource
+ * @see Resource
+ * @author Greenadine
+ */
 public class NamedApiResource extends ApiResource {
 
     private final String name;
 
-    public NamedApiResource(final int id, final String category, final String name) {
-        super(id, category);
+    @JsonCreator
+    public NamedApiResource(@JsonProperty("name") String name,
+                            @JsonProperty("url") final String url) {
+        super(url);
 
         this.name = name;
     }

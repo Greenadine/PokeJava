@@ -2,7 +2,8 @@ package apitest;
 
 import dev.greenadine.pokejava.client.PokeApi;
 import dev.greenadine.pokejava.client.PokeApiClient;
-import dev.greenadine.pokejava.model.Type;
+import dev.greenadine.pokejava.model.common.Name;
+import dev.greenadine.pokejava.model.pokemon.type.Type;
 
 public class ApiTest {
 
@@ -17,6 +18,9 @@ public class ApiTest {
     private static void testTypes() {
         Type type = API.getType(1);
 
-        System.out.println(type);
+        System.out.println(type.getName());
+        for(Name name : type.getNames()) {
+            System.out.println(name.name());
+        }
     }
 }

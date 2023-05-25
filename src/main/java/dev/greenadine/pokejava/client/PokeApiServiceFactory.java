@@ -1,5 +1,6 @@
 package dev.greenadine.pokejava.client;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import dev.greenadine.pokejava.client.v2.PokeApiV2ClientConfig;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
@@ -26,11 +27,11 @@ public final class PokeApiServiceFactory {
     }
 
     /**
-     * Creates a new instance of {@link PokeApiService} using the provided {@link ClientConfig}.
+     * Creates a new instance of {@link PokeApiService} using the provided {@link ClientConfig} and {@link ObjectMapper}.
      *
-     * @param config The {@link ClientConfig} to use.
+     * @param config the {@link ClientConfig} to use.
      *
-     * @return a new instance of {@link PokeApiService}.
+     * @return a new {@link PokeApiService}.
      */
     public static PokeApiService createService(ClientConfig config) {
         return new Retrofit.Builder()

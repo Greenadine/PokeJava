@@ -1,6 +1,6 @@
 package dev.greenadine.pokejava.client;
 
-import dev.greenadine.pokejava.model.Type;
+import dev.greenadine.pokejava.model.pokemon.type.Type;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
