@@ -15,10 +15,15 @@ public class ApiResource implements Resource {
 
     private final int id;
     private final String category;
-
     private final String url;
 
-    public ApiResource(@JsonProperty("url")final String url) {
+    protected ApiResource(int id, String category) {
+        this.id = id;
+        this.category = category;
+        this.url = "/" + category + "/" + id + "/";
+    }
+
+    public ApiResource(@JsonProperty("url") final String url) {
         this.id = getIdFromUrl(url);
         this.category = getCategoryFromUrl(url);
         this.url = url;
