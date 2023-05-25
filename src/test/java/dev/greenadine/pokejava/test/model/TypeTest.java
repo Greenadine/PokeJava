@@ -5,6 +5,8 @@ import dev.greenadine.pokejava.client.PokeApiClient;
 import dev.greenadine.pokejava.model.pokemon.type.Type;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TypeTest {
@@ -12,7 +14,7 @@ public class TypeTest {
     private final PokeApi API = new PokeApiClient();
 
     @Test
-    void test() {
+    void Single() {
         Type type = API.getType(1);
 
         assertEquals(1, type.getId());
@@ -28,5 +30,12 @@ public class TypeTest {
 
         assertEquals(6, type.getGameIndices().size());
         assertEquals("generation-i", type.getGeneration().getName());
+    }
+
+    @Test
+    void List() {
+        List<Type> types = API.getTypeList(0, -1);
+
+        assertEquals(19, types.size());
     }
 }

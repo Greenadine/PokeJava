@@ -1,6 +1,7 @@
 package dev.greenadine.pokejava.client;
 
 import dev.greenadine.pokejava.model.pokemon.Gender;
+import dev.greenadine.pokejava.model.pokemon.GrowthRate;
 import dev.greenadine.pokejava.model.pokemon.type.Type;
 import retrofit2.Call;
 
@@ -31,6 +32,16 @@ public class PokeApiClient implements PokeApi {
     @Override
     public List<Gender> getGenderList(int offset, int limit) {
         return result(service.getGenderList(offset, limit));
+    }
+
+    @Override
+    public GrowthRate getGrowthRate(int id) {
+        return result(service.getGrowthRate(id));
+    }
+
+    @Override
+    public List<GrowthRate> getGrowthRateList(int offset, int limit) {
+        return result(service.getGrowthRateList(offset, limit));
     }
 
     @Override
