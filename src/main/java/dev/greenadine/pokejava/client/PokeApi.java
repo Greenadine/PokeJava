@@ -3,8 +3,7 @@ package dev.greenadine.pokejava.client;
 import dev.greenadine.pokejava.model.pokemon.Gender;
 import dev.greenadine.pokejava.model.pokemon.GrowthRate;
 import dev.greenadine.pokejava.model.pokemon.type.Type;
-
-import java.util.List;
+import dev.greenadine.pokejava.model.resource.NamedApiResourceList;
 
 public interface PokeApi {
 
@@ -28,7 +27,7 @@ public interface PokeApi {
      *
      * @return a list of genders.
      */
-    List<Gender> getGenderList(int offset, int limit);
+    NamedApiResourceList getGenderList(int offset, int limit);
     //endregion
 
     //region Growth rates
@@ -50,7 +49,7 @@ public interface PokeApi {
      *
      * @return a list of growth rates.
      */
-    List<GrowthRate> getGrowthRateList(int offset, int limit);
+    NamedApiResourceList getGrowthRateList(int offset, int limit);
     //endregion
 
     //region Types
@@ -71,7 +70,7 @@ public interface PokeApi {
      *
      * @return a list of types.
      */
-    List<Type> getTypeList(int offset, int limit);
+    NamedApiResourceList getTypeList(int offset, int limit);
     //endregion
 
     //endregion

@@ -1,4 +1,6 @@
-package dev.greenadine.pokejava.model;
+package dev.greenadine.pokejava.model.resource;
+
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a resource from the API.
@@ -22,5 +24,6 @@ public interface Resource {
      *
      * @return the resource's name.
      */
+    @Nullable
     String getCategory();
 }

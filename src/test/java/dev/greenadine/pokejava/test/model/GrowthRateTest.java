@@ -3,9 +3,8 @@ package dev.greenadine.pokejava.test.model;
 import dev.greenadine.pokejava.client.PokeApi;
 import dev.greenadine.pokejava.client.PokeApiClient;
 import dev.greenadine.pokejava.model.pokemon.GrowthRate;
+import dev.greenadine.pokejava.model.resource.NamedApiResourceList;
 import org.junit.jupiter.api.Test;
-
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -24,8 +23,8 @@ public class GrowthRateTest {
 
     @Test
     void List() {
-        List<GrowthRate> growthRates = API.getGrowthRateList(0, -1);
+        NamedApiResourceList growthRates = API.getGrowthRateList(0, -1);
 
-        assertEquals(5, growthRates.size());
+        assertEquals(6, growthRates.getCount());
     }
 }

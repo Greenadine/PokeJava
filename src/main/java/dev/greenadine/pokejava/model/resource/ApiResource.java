@@ -1,4 +1,4 @@
-package dev.greenadine.pokejava.model;
+package dev.greenadine.pokejava.model.resource;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.jetbrains.annotations.NotNull;
@@ -35,6 +35,7 @@ public class ApiResource implements Resource {
     }
 
     @Override
+    @NotNull
     public String getCategory() {
         return category;
     }

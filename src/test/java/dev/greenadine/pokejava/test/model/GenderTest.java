@@ -3,9 +3,8 @@ package dev.greenadine.pokejava.test.model;
 import dev.greenadine.pokejava.client.PokeApi;
 import dev.greenadine.pokejava.client.PokeApiClient;
 import dev.greenadine.pokejava.model.pokemon.Gender;
+import dev.greenadine.pokejava.model.resource.NamedApiResourceList;
 import org.junit.jupiter.api.Test;
-
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -25,8 +24,8 @@ public class GenderTest {
 
     @Test
     void List() {
-        List<Gender> genders = API.getGenderList(0, -1);
+        NamedApiResourceList genders = API.getGenderList(0, -1);
 
-        assertEquals(3, genders.size());
+        assertEquals(3, genders.getCount());
     }
 }

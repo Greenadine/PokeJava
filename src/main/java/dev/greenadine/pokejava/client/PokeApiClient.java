@@ -3,10 +3,10 @@ package dev.greenadine.pokejava.client;
 import dev.greenadine.pokejava.model.pokemon.Gender;
 import dev.greenadine.pokejava.model.pokemon.GrowthRate;
 import dev.greenadine.pokejava.model.pokemon.type.Type;
+import dev.greenadine.pokejava.model.resource.NamedApiResourceList;
 import retrofit2.Call;
 
 import java.io.IOException;
-import java.util.List;
 
 public class PokeApiClient implements PokeApi {
 
@@ -30,7 +30,7 @@ public class PokeApiClient implements PokeApi {
     }
 
     @Override
-    public List<Gender> getGenderList(int offset, int limit) {
+    public NamedApiResourceList getGenderList(int offset, int limit) {
         return result(service.getGenderList(offset, limit));
     }
 
@@ -40,7 +40,7 @@ public class PokeApiClient implements PokeApi {
     }
 
     @Override
-    public List<GrowthRate> getGrowthRateList(int offset, int limit) {
+    public NamedApiResourceList getGrowthRateList(int offset, int limit) {
         return result(service.getGrowthRateList(offset, limit));
     }
 
@@ -50,7 +50,7 @@ public class PokeApiClient implements PokeApi {
     }
 
     @Override
-    public List<Type> getTypeList(int offset, int limit) {
+    public NamedApiResourceList getTypeList(int offset, int limit) {
         return result(service.getTypeList(offset, limit));
     }
 }
