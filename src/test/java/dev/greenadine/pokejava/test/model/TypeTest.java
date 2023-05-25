@@ -17,7 +17,7 @@ public class TypeTest {
 
         assertEquals(1, type.getId());
         assertEquals("normal", type.getName());
-        assertEquals("https://pokeapi.co/api/v2/type/1/", type.getUrl());
+        assertEquals("/type/1/", type.getUrl());
 
         assertEquals(0, type.getDamageRelations().doubleDamageTo().size());
         assertEquals(2, type.getDamageRelations().halfDamageTo().size());

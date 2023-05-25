@@ -1,10 +1,35 @@
 package dev.greenadine.pokejava.client;
 
+import dev.greenadine.pokejava.model.pokemon.Gender;
 import dev.greenadine.pokejava.model.pokemon.type.Type;
 
 import java.util.List;
 
 public interface PokeApi {
+
+    //region Resources
+
+    //region Gender
+
+    /**
+     * Retrieves the gender with the specified ID from the API.
+     *
+     * @param id the ID of the gender.
+     *
+     * @return the gender with the specified ID.
+     */
+    Gender getGender(int id);
+
+    /**
+     * Retrieves a list of genders.
+     *
+     * @param offset the query offset.
+     * @param limit the query limit.
+     *
+     * @return a list of genders.
+     */
+    List<Gender> getGenderList(int offset, int limit);
+    //endregion
 
     //region Types
     /**
@@ -19,11 +44,13 @@ public interface PokeApi {
     /**
      * Retrieves a list of types.
      *
-     * @param offset the starting ID.
-     * @param limit the maximum amount of types to retrieve.
+     * @param offset the query offset.
+     * @param limit the query limit.
      *
      * @return a list of types.
      */
     List<Type> getTypeList(int offset, int limit);
+    //endregion
+
     //endregion
 }

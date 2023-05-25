@@ -38,7 +38,7 @@ public class Type extends NamedApiResource {
                 @JsonProperty("names") List<Name> names,
                 @JsonProperty("pokemon") List<TypePokemonRelation> pokemon,
                 @JsonProperty("moves") List<NamedApiResource> moves) {
-        super(name, "https://pokeapi.co/api/v2/type/" + id + "/");
+        super(id, "type", name);
 
         this.damageRelations = damageRelations;
         this.gameIndices = gameIndices;

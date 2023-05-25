@@ -15,6 +15,12 @@ public class NamedApiResource extends ApiResource {
 
     private final String name;
 
+    protected NamedApiResource(int id, String category, String name) {
+        super(id, category);
+
+        this.name = name;
+    }
+
     @JsonCreator
     public NamedApiResource(@JsonProperty("name") String name,
                             @JsonProperty("url") final String url) {

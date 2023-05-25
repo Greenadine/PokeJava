@@ -1,5 +1,6 @@
 package dev.greenadine.pokejava.client;
 
+import dev.greenadine.pokejava.model.pokemon.Gender;
 import dev.greenadine.pokejava.model.pokemon.type.Type;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -11,6 +12,14 @@ import java.util.List;
 public interface PokeApiService {
 
     //region Resources
+
+    //region Genders
+    @GET("gender")
+    Call<List<Gender>> getGenderList(@Query("offset") int offset, @Query("limit") int limit);
+
+    @GET("gender/{id}/")
+    Call<Gender> getGender(@Path("id") int id);
+    //endergion
 
     //region Types
     @GET("type/")
