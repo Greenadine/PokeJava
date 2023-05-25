@@ -1,5 +1,6 @@
 package dev.greenadine.pokejava.model.resource;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.jetbrains.annotations.NotNull;
 
@@ -23,6 +24,7 @@ public class ApiResource implements Resource {
         this.url = "/" + category + "/" + id + "/";
     }
 
+    @JsonCreator
     public ApiResource(@JsonProperty("url") final String url) {
         this.id = getIdFromUrl(url);
         this.category = getCategoryFromUrl(url);

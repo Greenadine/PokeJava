@@ -1,5 +1,6 @@
 package dev.greenadine.pokejava.model.resource;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.List;
  */
 public class NamedApiResourceList extends AbstractResourceList<NamedApiResource> {
 
+    @JsonCreator
     protected NamedApiResourceList(@JsonProperty("count") int count,
                                    @JsonProperty("next") String next,
                                    @JsonProperty("previous") String previous,

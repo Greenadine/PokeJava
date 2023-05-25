@@ -1,16 +1,16 @@
 package dev.greenadine.pokejava.test.model;
 
 import dev.greenadine.pokejava.client.PokeApi;
-import dev.greenadine.pokejava.client.PokeApiClient;
 import dev.greenadine.pokejava.model.pokemon.type.Type;
 import dev.greenadine.pokejava.model.resource.NamedApiResourceList;
+import dev.greenadine.pokejava.test.Main;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TypeTest {
 
-    private final PokeApi API = new PokeApiClient();
+    private final PokeApi API = Main.API;
 
     @Test
     void Single() {
