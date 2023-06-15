@@ -19,7 +19,10 @@ public class EggGroup extends NamedApiResource {
     private final List<NamedApiResource> pokemonSpecies;
 
     @JsonCreator
-    public EggGroup(@JsonProperty("id") int id, @JsonProperty("name") String name, @JsonProperty("names") List<Name> names, @JsonProperty("pokemon_species") List<NamedApiResource> pokemonSpecies) {
+    public EggGroup(@JsonProperty("id") int id,
+                    @JsonProperty("name") String name,
+                    @JsonProperty("names") List<Name> names,
+                    @JsonProperty("pokemon_species") List<NamedApiResource> pokemonSpecies) {
         super(id, "egg-group", name);
 
         this.names = names;

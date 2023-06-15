@@ -5,6 +5,7 @@ import dev.greenadine.pokejava.model.pokemon.EggGroup;
 import dev.greenadine.pokejava.model.pokemon.Gender;
 import dev.greenadine.pokejava.model.pokemon.GrowthRate;
 import dev.greenadine.pokejava.model.pokemon.ability.Ability;
+import dev.greenadine.pokejava.model.pokemon.nature.Nature;
 import dev.greenadine.pokejava.model.pokemon.stat.Stat;
 import dev.greenadine.pokejava.model.pokemon.type.Type;
 import dev.greenadine.pokejava.model.resource.ApiResourceList;
@@ -143,6 +144,23 @@ public class PokeApiClient implements PokeApi {
     @Override
     public EggGroup getEggGroupByName(@NotNull String name) {
         return result(service.getEggGroupByName(name));
+    }
+    //endregion
+
+    //region Natures
+    @Override
+    public NamedApiResourceList getNatureList(int offset, int limit) {
+        return result(service.getNatureList(offset, limit));
+    }
+
+    @Override
+    public Nature getNatureById(int id) {
+        return result(service.getNatureById(id));
+    }
+
+    @Override
+    public Nature getNatureByName(@NotNull String name) {
+        return result(service.getNatureByName(name));
     }
     //endregion
 

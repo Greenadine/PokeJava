@@ -5,6 +5,7 @@ import dev.greenadine.pokejava.model.pokemon.EggGroup;
 import dev.greenadine.pokejava.model.pokemon.Gender;
 import dev.greenadine.pokejava.model.pokemon.GrowthRate;
 import dev.greenadine.pokejava.model.pokemon.ability.Ability;
+import dev.greenadine.pokejava.model.pokemon.nature.Nature;
 import dev.greenadine.pokejava.model.pokemon.stat.Stat;
 import dev.greenadine.pokejava.model.pokemon.type.Type;
 import dev.greenadine.pokejava.model.resource.ApiResourceList;
@@ -99,6 +100,17 @@ public interface PokeApiService {
 
     @GET("egg-group/{name}/")
     Call<EggGroup> getEggGroupByName(@Path("name") String name);
+    //endregion
+
+    //region Natures
+    @GET("nature/")
+    Call<NamedApiResourceList> getNatureList(@Query("offset") int offset, @Query("limit") int limit);
+
+    @GET("nature/{id}/")
+    Call<Nature> getNatureById(@Path("id") int id);
+
+    @GET("nature/{name}/")
+    Call<Nature> getNatureByName(@Path("name") String name);
     //endregion
 
     //endregion
