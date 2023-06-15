@@ -1,8 +1,6 @@
 # Default ignored files
 /shelf/
-/workspace.xml
-# Editor-based HTTP Client requests
-/httpRequests/
-# Datasource local storage ignored files
-/dataSources/
-/dataSources.local.xml
+# Ignore all .xml files in the .idea folder and subfolders except the runConfigurations folder which stores the workspace preferences
+/*.xml
+/inspectionProfiles/*
+!/.idea/runConfigurations/*
