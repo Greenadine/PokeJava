@@ -2,6 +2,7 @@ package dev.greenadine.pokejava.client;
 
 import dev.greenadine.pokejava.model.pokemon.Gender;
 import dev.greenadine.pokejava.model.pokemon.GrowthRate;
+import dev.greenadine.pokejava.model.pokemon.ability.Ability;
 import dev.greenadine.pokejava.model.pokemon.stat.Stat;
 import dev.greenadine.pokejava.model.pokemon.type.Type;
 import dev.greenadine.pokejava.model.resource.NamedApiResourceList;
@@ -137,6 +138,37 @@ public interface PokeApi {
      * @return the type with the specified name.
      */
     Type getTypeByName(@NotNull String name);
+    //endregion
+
+    //region Abilities
+
+    /**
+     * Retrieves a list of abilities.
+     *
+     * @param offset the query offset.
+     * @param limit the query limit.
+     *
+     * @return a list of abilities.
+     */
+    NamedApiResourceList getAbilityList(int offset, int limit);
+
+    /**
+     * Retrieves the ability with the specified ID from the API.
+     *
+     * @param id the ID of the ability.
+     *
+     * @return the ability with the specified ID.
+     */
+    Ability getAbilityById(int id);
+
+    /**
+     * Retrieves the ability with the specified name from the API.
+     *
+     * @param name the name of the ability.
+     *
+     * @return the ability with the specified name.
+     */
+    Ability getAbilityByName(@NotNull String name);
     //endregion
 
     //endregion

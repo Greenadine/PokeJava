@@ -13,6 +13,13 @@ public class GenderTest {
     private final PokeApi API = Main.API;
 
     @Test
+    void Get_Gender_List() {
+        NamedApiResourceList genders = API.getGenderList(0, -1);
+
+        assertEquals(3, genders.getCount());
+    }
+
+    @Test
     void Get_Gender_By_Id() {
         Gender gender = API.getGenderById(1);
 
@@ -30,12 +37,5 @@ public class GenderTest {
         assertEquals("female", gender.getName());
         assertEquals("bulbasaur", gender.getSpeciesGenderRelationList().get(0).pokemonSpecies().getName());
         assertEquals("wormadam", gender.getRequiredForEvolution().get(0).getName());
-    }
-
-    @Test
-    void Get_Gender_List() {
-        NamedApiResourceList genders = API.getGenderList(0, -1);
-
-        assertEquals(3, genders.getCount());
     }
 }

@@ -5,6 +5,12 @@ import dev.greenadine.pokejava.model.resource.NamedApiResource;
 
 import java.util.List;
 
+/**
+ * Represents a gender of a Pokémon species.
+ *
+ * @since 0.1.0
+ * @author Greenadine
+ */
 public class Gender extends NamedApiResource {
 
     private final List<SpeciesGenderRelation> speciesGenderRelationList;

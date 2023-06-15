@@ -2,6 +2,7 @@ package dev.greenadine.pokejava.client;
 
 import dev.greenadine.pokejava.model.pokemon.Gender;
 import dev.greenadine.pokejava.model.pokemon.GrowthRate;
+import dev.greenadine.pokejava.model.pokemon.ability.Ability;
 import dev.greenadine.pokejava.model.pokemon.stat.Stat;
 import dev.greenadine.pokejava.model.pokemon.type.Type;
 import dev.greenadine.pokejava.model.resource.NamedApiResourceList;
@@ -66,6 +67,16 @@ public interface PokeApiService {
     @GET("type/{name}/")
     Call<Type> getTypeByName(@Path("name") String name);
     //endregion
+
+    //region Abilities
+    @GET("ability/")
+    Call<NamedApiResourceList> getAbilityList(@Query("offset") int offset, @Query("limit") int limit);
+
+    @GET("ability/{id}/")
+    Call<Ability> getAbilityById(@Path("id") int id);
+
+    @GET("ability/{name}/")
+    Call<Ability> getAbilityByName(@Path("name") String name);
 
     //endregion
 }

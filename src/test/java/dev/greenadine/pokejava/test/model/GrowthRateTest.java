@@ -13,6 +13,13 @@ public class GrowthRateTest {
     private final PokeApi API = Main.API;
 
     @Test
+    void Get_GrowthRate_List() {
+        NamedApiResourceList growthRates = API.getGrowthRateList(0, -1);
+
+        assertEquals(6, growthRates.getCount());
+    }
+
+    @Test
     void Get_GrowthRate_By_Id() {
         GrowthRate growthRate = API.getGrowthRateById(1);
 
@@ -28,12 +35,5 @@ public class GrowthRateTest {
         assertEquals(1, growthRate.getId());
         assertEquals("slow", growthRate.getName());
         assertEquals("\\frac{5x^3}{4}", growthRate.getFormula());
-    }
-
-    @Test
-    void Get_GrowthRate_List() {
-        NamedApiResourceList growthRates = API.getGrowthRateList(0, -1);
-
-        assertEquals(6, growthRates.getCount());
     }
 }

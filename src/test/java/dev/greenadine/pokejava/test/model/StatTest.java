@@ -13,6 +13,14 @@ public class StatTest {
     private final PokeApi API = Main.API;
 
     @Test
+    void Get_Stat_List() {
+        NamedApiResourceList list = API.getStatList(1, 0);
+
+        assertEquals(8, list.getCount());
+        assertEquals("attack", list.getResults().get(0).getName());
+    }
+
+    @Test
     void Get_Type_By_Id() {
         Stat stat = API.getStatById(1);
 
@@ -28,13 +36,5 @@ public class StatTest {
         assertEquals(1, stat.getId());
         assertEquals("hp", stat.getName());
         assertEquals(1, stat.getGameIndex());
-    }
-
-    @Test
-    void Get_Stat_List() {
-        NamedApiResourceList list = API.getStatList(1, 0);
-
-        assertEquals(8, list.getCount());
-        assertEquals("attack", list.getResults().get(0).getName());
     }
 }

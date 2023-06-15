@@ -2,6 +2,7 @@ package dev.greenadine.pokejava.client;
 
 import dev.greenadine.pokejava.model.pokemon.Gender;
 import dev.greenadine.pokejava.model.pokemon.GrowthRate;
+import dev.greenadine.pokejava.model.pokemon.ability.Ability;
 import dev.greenadine.pokejava.model.pokemon.stat.Stat;
 import dev.greenadine.pokejava.model.pokemon.type.Type;
 import dev.greenadine.pokejava.model.resource.NamedApiResourceList;
@@ -95,6 +96,22 @@ public class PokeApiClient implements PokeApi {
         return result(service.getTypeByName(name));
     }
     //endregion
+
+    //region Abilities
+    @Override
+    public NamedApiResourceList getAbilityList(int offset, int limit) {
+        return result(service.getAbilityList(offset, limit));
+    }
+
+    @Override
+    public Ability getAbilityById(int id) {
+        return result(service.getAbilityById(id));
+    }
+
+    @Override
+    public Ability getAbilityByName(@NotNull String name) {
+        return result(service.getAbilityByName(name));
+    }
 
     //endregion
 
