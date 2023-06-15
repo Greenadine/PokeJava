@@ -6,6 +6,7 @@ import dev.greenadine.pokejava.model.pokemon.Gender;
 import dev.greenadine.pokejava.model.pokemon.GrowthRate;
 import dev.greenadine.pokejava.model.pokemon.ability.Ability;
 import dev.greenadine.pokejava.model.pokemon.nature.Nature;
+import dev.greenadine.pokejava.model.pokemon.pokeathlon.PokeathlonStat;
 import dev.greenadine.pokejava.model.pokemon.stat.Stat;
 import dev.greenadine.pokejava.model.pokemon.type.Type;
 import dev.greenadine.pokejava.model.resource.ApiResourceList;
@@ -161,6 +162,23 @@ public class PokeApiClient implements PokeApi {
     @Override
     public Nature getNatureByName(@NotNull String name) {
         return result(service.getNatureByName(name));
+    }
+    //endregion
+
+    //region Pokeathlon stats
+    @Override
+    public NamedApiResourceList getPokeathlonStatList(int offset, int limit) {
+        return result(service.getPokeathlonStatList(offset, limit));
+    }
+
+    @Override
+    public PokeathlonStat getPokeathlonStatById(int id) {
+        return result(service.getPokeathlonStatById(id));
+    }
+
+    @Override
+    public PokeathlonStat getPokeathlonStatByName(@NotNull String name) {
+        return result(service.getPokeathlonStatByName(name));
     }
     //endregion
 

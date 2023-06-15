@@ -6,9 +6,11 @@ import dev.greenadine.pokejava.model.pokemon.Gender;
 import dev.greenadine.pokejava.model.pokemon.GrowthRate;
 import dev.greenadine.pokejava.model.pokemon.ability.Ability;
 import dev.greenadine.pokejava.model.pokemon.nature.Nature;
+import dev.greenadine.pokejava.model.pokemon.pokeathlon.PokeathlonStat;
 import dev.greenadine.pokejava.model.pokemon.stat.Stat;
 import dev.greenadine.pokejava.model.pokemon.type.Type;
 import dev.greenadine.pokejava.model.resource.ApiResourceList;
+import dev.greenadine.pokejava.model.resource.NamedApiResource;
 import dev.greenadine.pokejava.model.resource.NamedApiResourceList;
 import org.jetbrains.annotations.NotNull;
 
@@ -257,6 +259,37 @@ public interface PokeApi {
      * @return the nature with the specified name.
      */
     Nature getNatureByName(@NotNull String name);
+    //endregion
+
+    //region Pokeathlon stats
+
+    /**
+     * Get a list of Pokeathlon stats.
+     *
+     * @param offset the query offset.
+     * @param limit the query limit.
+     *
+     * @return a list of Pokeathlon stats.
+     */
+    NamedApiResourceList getPokeathlonStatList(int offset, int limit);
+
+    /**
+     * Retrieves the Pokeathlon stat with the specified ID from the API.
+     *
+     * @param id the ID of the Pokeathlon stat.
+     *
+     * @return the Pokeathlon stat with the specified ID.
+     */
+    PokeathlonStat getPokeathlonStatById(int id);
+
+    /**
+     * Retrieves the Pokeathlon stat with the specified name from the API.
+     *
+     * @param name the name of the Pokeathlon stat.
+     *
+     * @return the Pokeathlon stat with the specified name.
+     */
+    PokeathlonStat getPokeathlonStatByName(@NotNull String name);
     //endregion
 
     //endregion
