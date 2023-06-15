@@ -5,6 +5,7 @@ import dev.greenadine.pokejava.model.pokemon.GrowthRate;
 import dev.greenadine.pokejava.model.pokemon.stat.Stat;
 import dev.greenadine.pokejava.model.pokemon.type.Type;
 import dev.greenadine.pokejava.model.resource.NamedApiResourceList;
+import org.jetbrains.annotations.NotNull;
 import retrofit2.Call;
 
 import java.io.IOException;
@@ -25,14 +26,6 @@ public class PokeApiClient implements PokeApi {
         service = PokeApiServiceFactory.getDefaultService();
     }
 
-    private <T> T result(Call<T> call) {
-        try {
-            return call.execute().body();
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
-        }
-    }
-
     //region Resources
 
     //region Stats
@@ -42,8 +35,13 @@ public class PokeApiClient implements PokeApi {
     }
 
     @Override
-    public Stat getStat(int id) {
-        return result(service.getStat(id));
+    public Stat getStatById(int id) {
+        return result(service.getStatById(id));
+    }
+
+    @Override
+    public Stat getStatByName(@NotNull String name) {
+        return result(service.getStatByName(name));
     }
     //endregion
 
@@ -54,8 +52,13 @@ public class PokeApiClient implements PokeApi {
     }
 
     @Override
-    public Gender getGender(int id) {
-        return result(service.getGender(id));
+    public Gender getGenderById(int id) {
+        return result(service.getGenderById(id));
+    }
+
+    @Override
+    public Gender getGenderByName(@NotNull String name) {
+        return result(service.getGenderByName(name));
     }
     //endregion
 
@@ -66,8 +69,13 @@ public class PokeApiClient implements PokeApi {
     }
 
     @Override
-    public GrowthRate getGrowthRate(int id) {
-        return result(service.getGrowthRate(id));
+    public GrowthRate getGrowthRateById(int id) {
+        return result(service.getGrowthRateById(id));
+    }
+
+    @Override
+    public GrowthRate getGrowthRateByName(@NotNull String name) {
+        return result(service.getGrowthRateByName(name));
     }
     //endregion
 
@@ -78,10 +86,32 @@ public class PokeApiClient implements PokeApi {
     }
 
     @Override
-    public Type getType(int id) {
-        return result(service.getType(id));
+    public Type getTypeById(int id) {
+        return result(service.getTypeById(id));
+    }
+
+    @Override
+    public Type getTypeByName(@NotNull String name) {
+        return result(service.getTypeByName(name));
     }
     //endregion
 
     //endregion
+
+    /**
+     * Executes the call synchronously and returns the result.
+     *
+     * @param call the call to execute.
+     *
+     * @return the result of the call.
+     *
+     * @param <T> the type of the result.
+     */
+    private <T> T result(Call<T> call) {
+        try {
+            return call.execute().body();
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
 }

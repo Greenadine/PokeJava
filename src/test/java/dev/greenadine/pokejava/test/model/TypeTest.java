@@ -13,8 +13,8 @@ public class TypeTest {
     private final PokeApi API = Main.API;
 
     @Test
-    void Single() {
-        Type type = API.getType(1);
+    void Get_Type_By_Id() {
+        Type type = API.getTypeById(1);
 
         assertEquals(1, type.getId());
         assertEquals("normal", type.getName());
@@ -32,7 +32,16 @@ public class TypeTest {
     }
 
     @Test
-    void List() {
+    void Get_Type_By_Name() {
+        Type type = API.getTypeByName("normal");
+
+        assertEquals(1, type.getId());
+        assertEquals("normal", type.getName());
+        assertEquals("/type/1/", type.getUrl());
+    }
+
+    @Test
+    void Get_Type_List() {
         NamedApiResourceList types = API.getTypeList(0, -1);
 
         assertEquals(20, types.getCount());

@@ -5,6 +5,7 @@ import dev.greenadine.pokejava.model.pokemon.GrowthRate;
 import dev.greenadine.pokejava.model.pokemon.stat.Stat;
 import dev.greenadine.pokejava.model.pokemon.type.Type;
 import dev.greenadine.pokejava.model.resource.NamedApiResourceList;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents the PokeAPI.
@@ -36,7 +37,16 @@ public interface PokeApi {
      *
      * @return the stat with the specified ID.
      */
-    Stat getStat(int id);
+    Stat getStatById(int id);
+
+    /**
+     * Retrieves the stat with the specified ID from the API.
+     *
+     * @param name the name of the stat.
+     *
+     * @return the stat with the specified name.
+     */
+    Stat getStatByName(@NotNull String name);
     //endregion
 
     //region Gender
@@ -57,7 +67,16 @@ public interface PokeApi {
      *
      * @return the gender with the specified ID.
      */
-    Gender getGender(int id);
+    Gender getGenderById(int id);
+
+    /**
+     * Retrieves the gender with the specified name from the API.
+     *
+     * @param name the name of the gender.
+     *
+     * @return the gender with the specified name.
+     */
+    Gender getGenderByName(@NotNull String name);
     //endregion
 
     //region Growth rates
@@ -78,7 +97,16 @@ public interface PokeApi {
      *
      * @return the growth rate with the specified ID.
      */
-    GrowthRate getGrowthRate(int id);
+    GrowthRate getGrowthRateById(int id);
+
+    /**
+     * Retrieves the growth rate with the specified name from the API.
+     *
+     * @param name the name of the growth rate.
+     *
+     * @return the growth rate with the specified name.
+     */
+    GrowthRate getGrowthRateByName(@NotNull String name);
     //endregion
 
     //region Types
@@ -99,7 +127,16 @@ public interface PokeApi {
      *
      * @return the type with the specified ID.
      */
-    Type getType(int id);
+    Type getTypeById(int id);
+
+    /**
+     * Retrieves the type with the specified name from the API.
+     *
+     * @param name the name of the type.
+     *
+     * @return the type with the specified name.
+     */
+    Type getTypeByName(@NotNull String name);
     //endregion
 
     //endregion

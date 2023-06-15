@@ -28,7 +28,10 @@ public interface PokeApiService {
     Call<NamedApiResourceList> getStatList(@Query("offset") int offset, @Query("limit") int limit);
 
     @GET("stat/{id}/")
-    Call<Stat> getStat(@Path("id") int id);
+    Call<Stat> getStatById(@Path("id") int id);
+
+    @GET("stat/{name}/")
+    Call<Stat> getStatByName(@Path("name") String name);
     //endregion
 
     //region Genders
@@ -36,7 +39,10 @@ public interface PokeApiService {
     Call<NamedApiResourceList> getGenderList(@Query("offset") int offset, @Query("limit") int limit);
 
     @GET("gender/{id}/")
-    Call<Gender> getGender(@Path("id") int id);
+    Call<Gender> getGenderById(@Path("id") int id);
+
+    @GET("gender/{name}/")
+    Call<Gender> getGenderByName(@Path("name") String name);
     //endregion
 
     //region Growth rates
@@ -44,7 +50,10 @@ public interface PokeApiService {
     Call<NamedApiResourceList> getGrowthRateList(@Query("offset") int offset, @Query("limit") int limit);
 
     @GET("growth-rate/{id}/")
-    Call<GrowthRate> getGrowthRate(@Path("id") int id);
+    Call<GrowthRate> getGrowthRateById(@Path("id") int id);
+
+    @GET("growth-rate/{name}/")
+    Call<GrowthRate> getGrowthRateByName(@Path("name") String name);
     //endregion
 
     //region Types
@@ -52,7 +61,10 @@ public interface PokeApiService {
     Call<NamedApiResourceList> getTypeList(@Query("offset") int offset, @Query("limit") int limit);
 
     @GET("type/{id}/")
-    Call<Type> getType(@Path("id") int id);
+    Call<Type> getTypeById(@Path("id") int id);
+
+    @GET("type/{name}/")
+    Call<Type> getTypeByName(@Path("name") String name);
     //endregion
 
     //endregion
