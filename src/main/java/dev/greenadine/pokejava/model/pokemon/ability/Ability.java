@@ -1,5 +1,6 @@
 package dev.greenadine.pokejava.model.pokemon.ability;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import dev.greenadine.pokejava.model.common.Name;
 import dev.greenadine.pokejava.model.common.VerboseEffect;
@@ -21,6 +22,7 @@ public class Ability extends NamedApiResource {
     private final AbilityFlavorText[] flavorTextEntries;
     private final AbilityPokemon[] pokemon;
 
+    @JsonCreator
     public Ability(@JsonProperty("id") int id, @JsonProperty("name") String name,
                    @JsonProperty("is_main_series") boolean isMainSeries,
                    @JsonProperty("generation") NamedApiResource generation,

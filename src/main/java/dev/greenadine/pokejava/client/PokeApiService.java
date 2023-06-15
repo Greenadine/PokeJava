@@ -1,10 +1,12 @@
 package dev.greenadine.pokejava.client;
 
+import dev.greenadine.pokejava.model.pokemon.Characteristic;
 import dev.greenadine.pokejava.model.pokemon.Gender;
 import dev.greenadine.pokejava.model.pokemon.GrowthRate;
 import dev.greenadine.pokejava.model.pokemon.ability.Ability;
 import dev.greenadine.pokejava.model.pokemon.stat.Stat;
 import dev.greenadine.pokejava.model.pokemon.type.Type;
+import dev.greenadine.pokejava.model.resource.ApiResourceList;
 import dev.greenadine.pokejava.model.resource.NamedApiResourceList;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -77,6 +79,15 @@ public interface PokeApiService {
 
     @GET("ability/{name}/")
     Call<Ability> getAbilityByName(@Path("name") String name);
+    //endregion
+
+    //region Characteristics
+    @GET("characteristic/")
+    Call<ApiResourceList> getCharacteristicList(@Query("offset") int offset, @Query("limit") int limit);
+
+    @GET("characteristic/{id}/")
+    Call<Characteristic> getCharacteristic(@Path("id") int id);
+    //endregion
 
     //endregion
 }

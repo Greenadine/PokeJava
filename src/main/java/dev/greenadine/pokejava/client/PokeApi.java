@@ -1,10 +1,12 @@
 package dev.greenadine.pokejava.client;
 
+import dev.greenadine.pokejava.model.pokemon.Characteristic;
 import dev.greenadine.pokejava.model.pokemon.Gender;
 import dev.greenadine.pokejava.model.pokemon.GrowthRate;
 import dev.greenadine.pokejava.model.pokemon.ability.Ability;
 import dev.greenadine.pokejava.model.pokemon.stat.Stat;
 import dev.greenadine.pokejava.model.pokemon.type.Type;
+import dev.greenadine.pokejava.model.resource.ApiResourceList;
 import dev.greenadine.pokejava.model.resource.NamedApiResourceList;
 import org.jetbrains.annotations.NotNull;
 
@@ -169,6 +171,28 @@ public interface PokeApi {
      * @return the ability with the specified name.
      */
     Ability getAbilityByName(@NotNull String name);
+    //endregion
+
+    //region Characteristics
+
+    /**
+     * Retrieves a list of characteristics.
+     *
+     * @param offset the query offset.
+     * @param limit the query limit.
+     *
+     * @return a list of characteristics.
+     */
+    ApiResourceList getCharacteristicList(int offset, int limit);
+
+    /**
+     * Retrieves the characteristic with the specified ID from the API.
+     *
+     * @param id the ID of the characteristic.
+     *
+     * @return the characteristic with the specified ID.
+     */
+    Characteristic getCharacteristic(int id);
     //endregion
 
     //endregion

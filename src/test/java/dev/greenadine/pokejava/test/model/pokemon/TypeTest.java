@@ -1,4 +1,4 @@
-package dev.greenadine.pokejava.test.model;
+package dev.greenadine.pokejava.test.model.pokemon;
 
 import dev.greenadine.pokejava.client.PokeApi;
 import dev.greenadine.pokejava.model.pokemon.type.Type;

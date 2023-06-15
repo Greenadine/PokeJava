@@ -1,10 +1,12 @@
 package dev.greenadine.pokejava.client;
 
+import dev.greenadine.pokejava.model.pokemon.Characteristic;
 import dev.greenadine.pokejava.model.pokemon.Gender;
 import dev.greenadine.pokejava.model.pokemon.GrowthRate;
 import dev.greenadine.pokejava.model.pokemon.ability.Ability;
 import dev.greenadine.pokejava.model.pokemon.stat.Stat;
 import dev.greenadine.pokejava.model.pokemon.type.Type;
+import dev.greenadine.pokejava.model.resource.ApiResourceList;
 import dev.greenadine.pokejava.model.resource.NamedApiResourceList;
 import org.jetbrains.annotations.NotNull;
 import retrofit2.Call;
@@ -111,6 +113,18 @@ public class PokeApiClient implements PokeApi {
     @Override
     public Ability getAbilityByName(@NotNull String name) {
         return result(service.getAbilityByName(name));
+    }
+    //endregion
+
+    //region Characteristics
+    @Override
+    public ApiResourceList getCharacteristicList(int offset, int limit) {
+        return result(service.getCharacteristicList(offset, limit));
+    }
+
+    @Override
+    public Characteristic getCharacteristic(int id) {
+        return result(service.getCharacteristic(id));
     }
 
     //endregion
