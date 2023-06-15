@@ -6,6 +6,8 @@ import dev.greenadine.pokejava.model.common.Name;
 import dev.greenadine.pokejava.model.common.VerboseEffect;
 import dev.greenadine.pokejava.model.resource.NamedApiResource;
 
+import java.util.List;
+
 /**
  * Represents a Pokémon ability.
  *
@@ -16,21 +18,21 @@ public class Ability extends NamedApiResource {
 
     private final boolean isMainSeries;
     private final NamedApiResource generation;
-    private final Name[] names;
-    private final VerboseEffect[] effectEntries;
-    private final AbilityEffectChange[] effectChanges;
-    private final AbilityFlavorText[] flavorTextEntries;
-    private final AbilityPokemon[] pokemon;
+    private final List<Name> names;
+    private final List<VerboseEffect> effectEntries;
+    private final List<AbilityEffectChange> effectChanges;
+    private final List<AbilityFlavorText> flavorTextEntries;
+    private final List<AbilityPokemon> pokemon;
 
     @JsonCreator
     public Ability(@JsonProperty("id") int id, @JsonProperty("name") String name,
                    @JsonProperty("is_main_series") boolean isMainSeries,
                    @JsonProperty("generation") NamedApiResource generation,
-                   @JsonProperty("names") Name[] names,
-                   @JsonProperty("effect_entries") VerboseEffect[] effectEntries,
-                   @JsonProperty("effect_changes") AbilityEffectChange[] effectChanges,
-                   @JsonProperty("flavor_text_entries") AbilityFlavorText[] flavorTextEntries,
-                   @JsonProperty("pokemon") AbilityPokemon[] pokemon) {
+                   @JsonProperty("names") List<Name> names,
+                   @JsonProperty("effect_entries") List<VerboseEffect> effectEntries,
+                   @JsonProperty("effect_changes") List<AbilityEffectChange> effectChanges,
+                   @JsonProperty("flavor_text_entries") List<AbilityFlavorText> flavorTextEntries,
+                   @JsonProperty("pokemon") List<AbilityPokemon> pokemon) {
         super(id, "ability", name);
 
         this.isMainSeries = isMainSeries;
@@ -61,11 +63,11 @@ public class Ability extends NamedApiResource {
     }
 
     /**
-     * Gets the name of the ability listed in different languages.
+     * Gets the names of the ability listed in different languages.
      *
-     * @return the name of the ability listed in different languages.
+     * @return the names of the ability listed in different languages.
      */
-    public Name[] getNames() {
+    public List<Name> getNames() {
         return names;
     }
 
@@ -74,16 +76,16 @@ public class Ability extends NamedApiResource {
      *
      * @return the effect of the ability listed in different languages.
      */
-    public VerboseEffect[] getEffectEntries() {
+    public List<VerboseEffect> getEffectEntries() {
         return effectEntries;
     }
 
     /**
-     * Gets the list of previous effects this ability has had across version groups.
+     * Gets the previous effects this ability has had across version groups.
      *
-     * @return an array of previous effects this ability has had across version groups.
+     * @return the previous effects this ability has had across version groups.
      */
-    public AbilityEffectChange[] getEffectChanges() {
+    public List<AbilityEffectChange> getEffectChanges() {
         return effectChanges;
     }
 
@@ -92,16 +94,16 @@ public class Ability extends NamedApiResource {
      *
      * @return the flavor text of the ability listed in different languages.
      */
-    public AbilityFlavorText[] getFlavorTextEntries() {
+    public List<AbilityFlavorText> getFlavorTextEntries() {
         return flavorTextEntries;
     }
 
     /**
-     * Gets a list of Pokémon that could potentially have this ability.
+     * Gets the Pokémon that could potentially have this ability.
      *
-     * @return an array of Pokémon that could potentially have this ability.
+     * @return the Pokémon that could potentially have this ability.
      */
-    public AbilityPokemon[] getPokemon() {
+    public List<AbilityPokemon> getPokemon() {
         return pokemon;
     }
 }

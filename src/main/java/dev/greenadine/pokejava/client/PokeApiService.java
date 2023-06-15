@@ -1,6 +1,7 @@
 package dev.greenadine.pokejava.client;
 
 import dev.greenadine.pokejava.model.pokemon.Characteristic;
+import dev.greenadine.pokejava.model.pokemon.EggGroup;
 import dev.greenadine.pokejava.model.pokemon.Gender;
 import dev.greenadine.pokejava.model.pokemon.GrowthRate;
 import dev.greenadine.pokejava.model.pokemon.ability.Ability;
@@ -87,6 +88,17 @@ public interface PokeApiService {
 
     @GET("characteristic/{id}/")
     Call<Characteristic> getCharacteristic(@Path("id") int id);
+    //endregion
+
+    //region Egg groups
+    @GET("egg-group/")
+    Call<NamedApiResourceList> getEggGroupList(@Query("offset") int offset, @Query("limit") int limit);
+
+    @GET("egg-group/{id}/")
+    Call<EggGroup> getEggGroupById(@Path("id") int id);
+
+    @GET("egg-group/{name}/")
+    Call<EggGroup> getEggGroupByName(@Path("name") String name);
     //endregion
 
     //endregion

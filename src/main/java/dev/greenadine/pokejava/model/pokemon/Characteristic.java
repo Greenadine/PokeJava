@@ -6,6 +6,8 @@ import dev.greenadine.pokejava.model.common.Description;
 import dev.greenadine.pokejava.model.resource.ApiResource;
 import dev.greenadine.pokejava.model.resource.NamedApiResource;
 
+import java.util.List;
+
 /**
  * Represents a characteristic.
  *
@@ -17,14 +19,14 @@ public class Characteristic extends ApiResource {
     private final int geneModulo;
     private final int[] possibleValues;
     private final NamedApiResource highestStat;
-    private final Description[] descriptions;
+    private final List<Description> descriptions;
 
     @JsonCreator
     public Characteristic(@JsonProperty("id") int id,
                           @JsonProperty("gene_modulo") int geneModulo,
                           @JsonProperty("possible_values") int[] possibleValues,
                           @JsonProperty("highest_stat") NamedApiResource highestStat,
-                          @JsonProperty("descriptions") Description[] descriptions) {
+                          @JsonProperty("descriptions") List<Description>  descriptions) {
         super(id, "characteristic");
 
         this.geneModulo = geneModulo;
@@ -65,7 +67,7 @@ public class Characteristic extends ApiResource {
      *
      * @return the descriptions of the characteristic.
      */
-    public Description[] getDescriptions() {
+    public List<Description>  getDescriptions() {
         return descriptions;
     }
 }

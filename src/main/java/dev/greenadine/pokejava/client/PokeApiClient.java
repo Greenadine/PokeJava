@@ -1,6 +1,7 @@
 package dev.greenadine.pokejava.client;
 
 import dev.greenadine.pokejava.model.pokemon.Characteristic;
+import dev.greenadine.pokejava.model.pokemon.EggGroup;
 import dev.greenadine.pokejava.model.pokemon.Gender;
 import dev.greenadine.pokejava.model.pokemon.GrowthRate;
 import dev.greenadine.pokejava.model.pokemon.ability.Ability;
@@ -126,6 +127,24 @@ public class PokeApiClient implements PokeApi {
     public Characteristic getCharacteristic(int id) {
         return result(service.getCharacteristic(id));
     }
+    //endregion
+
+    //region Egg groups
+    @Override
+    public NamedApiResourceList getEggGroupList(int offset, int limit) {
+        return result(service.getEggGroupList(offset, limit));
+    }
+
+    @Override
+    public EggGroup getEggGroupById(int id) {
+        return result(service.getEggGroupById(id));
+    }
+
+    @Override
+    public EggGroup getEggGroupByName(@NotNull String name) {
+        return result(service.getEggGroupByName(name));
+    }
+    //endregion
 
     //endregion
 
