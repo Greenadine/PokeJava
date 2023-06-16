@@ -25,7 +25,7 @@ public class Type extends NamedApiResource {
     private final NamedApiResource generation;
     private final NamedApiResource moveDamageClass;
     private final List<Name> names;
-    private final List<TypePokemonRelation> pokemon;
+    private final List<TypePokemon> pokemon;
     private final List<NamedApiResource> moves;
 
     @JsonCreator
@@ -36,7 +36,7 @@ public class Type extends NamedApiResource {
                 @JsonProperty("generation") NamedApiResource generation,
                 @JsonProperty("move_damage_class") NamedApiResource moveDamageClass,
                 @JsonProperty("names") List<Name> names,
-                @JsonProperty("pokemon") List<TypePokemonRelation> pokemon,
+                @JsonProperty("pokemon") List<TypePokemon> pokemon,
                 @JsonProperty("moves") List<NamedApiResource> moves) {
         super(id, "type", name);
 
@@ -105,7 +105,7 @@ public class Type extends NamedApiResource {
      * @return the Pokémon that have the type.
      */
     @NotNull
-    public List<TypePokemonRelation> getPokemon() {
+    public List<TypePokemon> getPokemon() {
         return pokemon;
     }
 

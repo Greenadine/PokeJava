@@ -7,6 +7,7 @@ import dev.greenadine.pokejava.model.pokemon.growthrate.GrowthRate;
 import dev.greenadine.pokejava.model.pokemon.nature.Nature;
 import dev.greenadine.pokejava.model.pokemon.pokeathlon.PokeathlonStat;
 import dev.greenadine.pokejava.model.pokemon.shape.PokemonShape;
+import dev.greenadine.pokejava.model.pokemon.species.PokemonSpecies;
 import dev.greenadine.pokejava.model.pokemon.stat.Stat;
 import dev.greenadine.pokejava.model.pokemon.type.Type;
 import dev.greenadine.pokejava.model.resource.ApiResourceList;
@@ -382,6 +383,37 @@ public interface PokeApi {
      * @return the Pokémon shape with the specified name.
      */
     PokemonShape getPokemonShapeByName(@NotNull String name);
+    //endregion
+
+    //region Pokémon species
+
+    /**
+     * Retrieves a list of Pokémon species from the API.
+     *
+     * @param offset the query offset.
+     * @param limit the query limit.
+     *
+     * @return a list of Pokémon species.
+     */
+    NamedApiResourceList getPokemonSpeciesList(int offset, int limit);
+
+    /**
+     * Retrieves the Pokémon species with the specified ID from the API.
+     *
+     * @param id the ID of the Pokémon species.
+     *
+     * @return the Pokémon species with the specified ID.
+     */
+    PokemonSpecies getPokemonSpeciesById(int id);
+
+    /**
+     * Retrieves the Pokémon species with the specified name from the API.
+     *
+     * @param name the name of the Pokémon species.
+     *
+     * @return the Pokémon species with the specified name.
+     */
+    PokemonSpecies getPokemonSpeciesByName(@NotNull String name);
     //endregion
 
     //endregion

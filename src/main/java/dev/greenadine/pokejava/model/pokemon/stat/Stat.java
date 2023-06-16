@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import dev.greenadine.pokejava.model.common.Name;
 import dev.greenadine.pokejava.model.resource.ApiResource;
 import dev.greenadine.pokejava.model.resource.NamedApiResource;
-import dev.greenadine.pokejava.model.resource.NamedApiResourceList;
 
 import java.util.List;
 

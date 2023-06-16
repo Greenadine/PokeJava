@@ -10,8 +10,9 @@ import java.util.List;
  * @param increase a list of moves which increase the referenced stat.
  * @param decrease a list of moves which decrease the referenced stat.
  *
- * @since 0.1.0
  * @see MoveStatAffect
+ *
+ * @since 0.1.0
  * @author Greenadine
  */
 public record MoveStatAffectSets(@JsonProperty("increase") List<MoveStatAffect> increase,

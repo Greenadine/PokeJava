@@ -1,5 +1,6 @@
 package dev.greenadine.pokejava.model.pokemon.growthrate;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import dev.greenadine.pokejava.model.resource.NamedApiResource;
 import dev.greenadine.pokejava.model.common.Description;
@@ -19,7 +20,8 @@ public class GrowthRate extends NamedApiResource {
     private final List<GrowthRateExperienceLevel> levels;
     private final List<NamedApiResource> pokemonSpecies;
 
-    protected GrowthRate(@JsonProperty("id") int id,
+    @JsonCreator
+    public GrowthRate(@JsonProperty("id") int id,
                          @JsonProperty("name") String name,
                          @JsonProperty("formula") String formula,
                          @JsonProperty("descriptions") List<Description> descriptions,

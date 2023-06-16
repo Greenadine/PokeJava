@@ -7,6 +7,7 @@ import dev.greenadine.pokejava.model.pokemon.growthrate.GrowthRate;
 import dev.greenadine.pokejava.model.pokemon.nature.Nature;
 import dev.greenadine.pokejava.model.pokemon.pokeathlon.PokeathlonStat;
 import dev.greenadine.pokejava.model.pokemon.shape.PokemonShape;
+import dev.greenadine.pokejava.model.pokemon.species.PokemonSpecies;
 import dev.greenadine.pokejava.model.pokemon.stat.Stat;
 import dev.greenadine.pokejava.model.pokemon.type.Type;
 import dev.greenadine.pokejava.model.resource.ApiResourceList;
@@ -230,6 +231,23 @@ public class PokeApiClient implements PokeApi {
     @Override
     public PokemonShape getPokemonShapeByName(@NotNull String name) {
         return result(service.getPokemonShapeByName(name));
+    }
+    //endregion
+
+    //region Pokémon species
+    @Override
+    public NamedApiResourceList getPokemonSpeciesList(int offset, int limit) {
+        return result(service.getPokemonSpeciesList(offset, limit));
+    }
+
+    @Override
+    public PokemonSpecies getPokemonSpeciesById(int id) {
+        return result(service.getPokemonSpeciesById(id));
+    }
+
+    @Override
+    public PokemonSpecies getPokemonSpeciesByName(@NotNull String name) {
+        return result(service.getPokemonSpeciesByName(name));
     }
     //endregion
 

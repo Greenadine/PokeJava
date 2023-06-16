@@ -9,9 +9,10 @@ import dev.greenadine.pokejava.model.resource.NamedApiResource;
  * @param change the amount of change to the referenced stat.
  * @param move the move causing the change.
  *
- * @author Greenadine
  * @see MoveStatAffectSets
+ *
  * @since 0.1.0
+ * @author Greenadine
  */
 public record MoveStatAffect(@JsonProperty("change") int change,
                              @JsonProperty("move") NamedApiResource move) {
