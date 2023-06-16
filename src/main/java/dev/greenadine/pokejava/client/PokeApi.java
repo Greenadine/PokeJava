@@ -1,9 +1,6 @@
 package dev.greenadine.pokejava.client;
 
-import dev.greenadine.pokejava.model.pokemon.Characteristic;
-import dev.greenadine.pokejava.model.pokemon.EggGroup;
-import dev.greenadine.pokejava.model.pokemon.Gender;
-import dev.greenadine.pokejava.model.pokemon.GrowthRate;
+import dev.greenadine.pokejava.model.pokemon.*;
 import dev.greenadine.pokejava.model.pokemon.ability.Ability;
 import dev.greenadine.pokejava.model.pokemon.nature.Nature;
 import dev.greenadine.pokejava.model.pokemon.pokeathlon.PokeathlonStat;
@@ -28,7 +25,7 @@ public interface PokeApi {
 
     //region Stats
     /**
-     * Retrieves a list of stats.
+     * Retrieves a list of stats from the API.
      *
      * @param offset the query offset.
      * @param limit the query limit.
@@ -58,7 +55,7 @@ public interface PokeApi {
 
     //region Gender
     /**
-     * Retrieves a list of genders.
+     * Retrieves a list of genders from the API.
      *
      * @param offset the query offset.
      * @param limit the query limit.
@@ -88,7 +85,7 @@ public interface PokeApi {
 
     //region Growth rates
     /**
-     * Retrieves a list of growth rates.
+     * Retrieves a list of growth rates from the API.
      *
      * @param offset the query offset.
      * @param limit the query limit.
@@ -118,7 +115,7 @@ public interface PokeApi {
 
     //region Types
     /**
-     * Retrieves a list of types.
+     * Retrieves a list of types from the API.
      *
      * @param offset the query offset.
      * @param limit the query limit.
@@ -149,7 +146,7 @@ public interface PokeApi {
     //region Abilities
 
     /**
-     * Retrieves a list of abilities.
+     * Retrieves a list of abilities from the API.
      *
      * @param offset the query offset.
      * @param limit the query limit.
@@ -180,7 +177,7 @@ public interface PokeApi {
     //region Characteristics
 
     /**
-     * Retrieves a list of characteristics.
+     * Retrieves a list of characteristics from the API.
      *
      * @param offset the query offset.
      * @param limit the query limit.
@@ -202,7 +199,7 @@ public interface PokeApi {
     //region Egg groups
 
     /**
-     * Retrieves a list of egg groups.
+     * Retrieves a list of egg groups from the API.
      *
      * @param offset the query offset.
      * @param limit the query limit.
@@ -233,7 +230,7 @@ public interface PokeApi {
     //region Natures
 
     /**
-     * Retrieves a list of natures.
+     * Retrieves a list of natures from the API.
      *
      * @param offset the query offset.
      * @param limit the query limit.
@@ -264,7 +261,7 @@ public interface PokeApi {
     //region Pokeathlon stats
 
     /**
-     * Get a list of Pokeathlon stats.
+     * Retrieves a list of Pokeathlon stats from the API.
      *
      * @param offset the query offset.
      * @param limit the query limit.
@@ -290,6 +287,37 @@ public interface PokeApi {
      * @return the Pokeathlon stat with the specified name.
      */
     PokeathlonStat getPokeathlonStatByName(@NotNull String name);
+    //endregion
+
+    //region Pokémon colors
+
+    /**
+     * Retrieves a list of Pokémon colors from the API.
+     *
+     * @param offset the query offset.
+     * @param limit the query limit.
+     *
+     * @return a list of Pokémon colors.
+     */
+    NamedApiResourceList getPokemonColorList(int offset, int limit);
+
+    /**
+     * Retrieves the Pokémon color with the specified ID from the API.
+     *
+     * @param id the ID of the Pokémon color.
+     *
+     * @return the Pokémon color with the specified ID.
+     */
+    PokemonColor getPokemonColorById(int id);
+
+    /**
+     * Retrieves the Pokémon color with the specified name from the API.
+     *
+     * @param name the name of the Pokémon color.
+     *
+     * @return the Pokémon color with the specified name.
+     */
+    PokemonColor getPokemonColorByName(@NotNull String name);
     //endregion
 
     //endregion

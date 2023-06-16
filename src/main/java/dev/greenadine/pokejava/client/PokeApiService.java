@@ -1,9 +1,6 @@
 package dev.greenadine.pokejava.client;
 
-import dev.greenadine.pokejava.model.pokemon.Characteristic;
-import dev.greenadine.pokejava.model.pokemon.EggGroup;
-import dev.greenadine.pokejava.model.pokemon.Gender;
-import dev.greenadine.pokejava.model.pokemon.GrowthRate;
+import dev.greenadine.pokejava.model.pokemon.*;
 import dev.greenadine.pokejava.model.pokemon.ability.Ability;
 import dev.greenadine.pokejava.model.pokemon.nature.Nature;
 import dev.greenadine.pokejava.model.pokemon.pokeathlon.PokeathlonStat;
@@ -123,6 +120,17 @@ public interface PokeApiService {
 
     @GET("pokeathlon-stat/{name}/")
     Call<PokeathlonStat> getPokeathlonStatByName(@Path("name") String name);
+    //endregion
+
+    //region Pokémon colors
+    @GET("pokemon-color/")
+    Call<NamedApiResourceList> getPokemonColorList(@Query("offset") int offset, @Query("limit") int limit);
+
+    @GET("pokemon-color/{id}/")
+    Call<PokemonColor> getPokemonColorById(@Path("id") int id);
+
+    @GET("pokemon-color/{name}/")
+    Call<PokemonColor> getPokemonColorByName(@Path("name") String name);
     //endregion
 
     //endregion
