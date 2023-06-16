@@ -6,9 +6,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * Represents a named resource from the API.
  *
- * @since 0.1.0
  * @see ApiResource
  * @see Resource
+ *
+ * @since 0.1.0
  * @author Greenadine
  */
 public class NamedApiResource extends ApiResource {

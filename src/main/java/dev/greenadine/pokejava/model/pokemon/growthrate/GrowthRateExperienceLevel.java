@@ -1,4 +1,4 @@
-package dev.greenadine.pokejava.model.pokemon;
+package dev.greenadine.pokejava.model.pokemon.growthrate;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

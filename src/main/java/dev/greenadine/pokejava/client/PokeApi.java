@@ -2,12 +2,14 @@ package dev.greenadine.pokejava.client;
 
 import dev.greenadine.pokejava.model.pokemon.*;
 import dev.greenadine.pokejava.model.pokemon.ability.Ability;
+import dev.greenadine.pokejava.model.pokemon.gender.Gender;
+import dev.greenadine.pokejava.model.pokemon.growthrate.GrowthRate;
 import dev.greenadine.pokejava.model.pokemon.nature.Nature;
 import dev.greenadine.pokejava.model.pokemon.pokeathlon.PokeathlonStat;
+import dev.greenadine.pokejava.model.pokemon.shape.PokemonShape;
 import dev.greenadine.pokejava.model.pokemon.stat.Stat;
 import dev.greenadine.pokejava.model.pokemon.type.Type;
 import dev.greenadine.pokejava.model.resource.ApiResourceList;
-import dev.greenadine.pokejava.model.resource.NamedApiResource;
 import dev.greenadine.pokejava.model.resource.NamedApiResourceList;
 import org.jetbrains.annotations.NotNull;
 
@@ -349,6 +351,37 @@ public interface PokeApi {
      * @return the Pokémon habitat with the specified name.
      */
     PokemonHabitat getPokemonHabitatByName(@NotNull String name);
+    //endregion
+
+    //region Pokémon shapes
+
+    /**
+     * Retrieves a list of Pokémon shapes from the API.
+     *
+     * @param offset the query offset.
+     * @param limit the query limit.
+     *
+     * @return a list of Pokémon shapes.
+     */
+    NamedApiResourceList getPokemonShapeList(int offset, int limit);
+
+    /**
+     * Retrieves the Pokémon shape with the specified ID from the API.
+     *
+     * @param id the ID of the Pokémon shape.
+     *
+     * @return a Pokémon shape with the specified ID.
+     */
+    PokemonShape getPokemonShapeById(int id);
+
+    /**
+     * Retrieves the Pokémon shape with the specified name from the API.
+     *
+     * @param name the name of the Pokémon shape.
+     *
+     * @return the Pokémon shape with the specified name.
+     */
+    PokemonShape getPokemonShapeByName(@NotNull String name);
     //endregion
 
     //endregion

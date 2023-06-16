@@ -1,7 +1,7 @@
 package dev.greenadine.pokejava.test.model.pokemon;
 
 import dev.greenadine.pokejava.client.PokeApi;
-import dev.greenadine.pokejava.model.pokemon.Gender;
+import dev.greenadine.pokejava.model.pokemon.gender.Gender;
 import dev.greenadine.pokejava.model.resource.NamedApiResourceList;
 import dev.greenadine.pokejava.test.Main;
 import org.junit.jupiter.api.Test;

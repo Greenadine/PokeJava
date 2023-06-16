@@ -1,4 +1,4 @@
-package dev.greenadine.pokejava.model.pokemon;
+package dev.greenadine.pokejava.model.pokemon.gender;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import dev.greenadine.pokejava.model.resource.NamedApiResource;

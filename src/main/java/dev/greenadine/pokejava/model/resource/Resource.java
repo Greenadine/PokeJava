@@ -6,8 +6,9 @@ import org.jetbrains.annotations.Nullable;
  * Represents a resource from the API.
  * A resource is a model that has (at least) an ID and a category.
  *
- * @since 0.1.0
  * @see ApiResource
+ *
+ * @since 0.1.0
  * @author Greenadine
  */
 public interface Resource {

@@ -2,8 +2,11 @@ package dev.greenadine.pokejava.client;
 
 import dev.greenadine.pokejava.model.pokemon.*;
 import dev.greenadine.pokejava.model.pokemon.ability.Ability;
+import dev.greenadine.pokejava.model.pokemon.gender.Gender;
+import dev.greenadine.pokejava.model.pokemon.growthrate.GrowthRate;
 import dev.greenadine.pokejava.model.pokemon.nature.Nature;
 import dev.greenadine.pokejava.model.pokemon.pokeathlon.PokeathlonStat;
+import dev.greenadine.pokejava.model.pokemon.shape.PokemonShape;
 import dev.greenadine.pokejava.model.pokemon.stat.Stat;
 import dev.greenadine.pokejava.model.pokemon.type.Type;
 import dev.greenadine.pokejava.model.resource.ApiResourceList;
@@ -210,6 +213,23 @@ public class PokeApiClient implements PokeApi {
     @Override
     public PokemonHabitat getPokemonHabitatByName(@NotNull String name) {
         return result(service.getPokemonHabitatByName(name));
+    }
+    //endregion
+
+    //region Pokémon shapes
+    @Override
+    public NamedApiResourceList getPokemonShapeList(int offset, int limit) {
+        return result(service.getPokemonShapeList(offset, limit));
+    }
+
+    @Override
+    public PokemonShape getPokemonShapeById(int id) {
+        return result(service.getPokemonShapeById(id));
+    }
+
+    @Override
+    public PokemonShape getPokemonShapeByName(@NotNull String name) {
+        return result(service.getPokemonShapeByName(name));
     }
     //endregion
 

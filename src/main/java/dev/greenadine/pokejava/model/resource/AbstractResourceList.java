@@ -9,6 +9,9 @@ import java.util.List;
  * Represents a list of resources from the API.
  *
  * @param <T> the type of {@link Resource}s in the list.
+ *
+ * @since 0.1.0
+ * @author Greenadine
  */
 public abstract class AbstractResourceList<T extends Resource> implements ResourceList<T> {
 

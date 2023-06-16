@@ -8,8 +8,9 @@ import org.jetbrains.annotations.NotNull;
  * Represents a resource from the API.
  * A resource is a model that has (at least) an ID and a category.
  *
- * @since 0.1.0
  * @see Resource
+ *
+ * @since 0.1.0
  * @author Greenadine
  */
 public class ApiResource implements Resource {

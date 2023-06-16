@@ -8,11 +8,12 @@ import java.util.List;
 /**
  * Represents a list of {@link ApiResource}s.
  *
- * @since 0.1.0
  * @see ApiResource
  * @see AbstractResourceList
  * @see ResourceList
+ *
  * @author Greenadine
+ * @since 0.1.0
  */
 public class ApiResourceList extends AbstractResourceList<ApiResource> {
 
