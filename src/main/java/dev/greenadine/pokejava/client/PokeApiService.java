@@ -133,5 +133,16 @@ public interface PokeApiService {
     Call<PokemonColor> getPokemonColorByName(@Path("name") String name);
     //endregion
 
+    //region Pokémon habitats
+    @GET("pokemon-habitat/")
+    Call<NamedApiResourceList> getPokemonHabitatList(@Query("offset") int offset, @Query("limit") int limit);
+
+    @GET("pokemon-habitat/{id}/")
+    Call<PokemonHabitat> getPokemonHabitatById(@Path("id") int id);
+
+    @GET("pokemon-habitat/{name}/")
+    Call<PokemonHabitat> getPokemonHabitatByName(@Path("name") String name);
+    //endregion
+
     //endregion
 }

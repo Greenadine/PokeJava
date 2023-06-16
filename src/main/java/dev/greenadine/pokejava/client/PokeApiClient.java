@@ -196,6 +196,23 @@ public class PokeApiClient implements PokeApi {
     }
     //endregion
 
+    //region Pokémon habitats
+    @Override
+    public NamedApiResourceList getPokemonHabitatList(int offset, int limit) {
+        return result(service.getPokemonHabitatList(offset, limit));
+    }
+
+    @Override
+    public PokemonHabitat getPokemonHabitatById(int id) {
+        return result(service.getPokemonHabitatById(id));
+    }
+
+    @Override
+    public PokemonHabitat getPokemonHabitatByName(@NotNull String name) {
+        return result(service.getPokemonHabitatByName(name));
+    }
+    //endregion
+
     //endregion
 
     /**

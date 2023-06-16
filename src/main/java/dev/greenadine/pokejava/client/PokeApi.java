@@ -320,5 +320,36 @@ public interface PokeApi {
     PokemonColor getPokemonColorByName(@NotNull String name);
     //endregion
 
+    //region Pokémon habitats
+
+    /**
+     * Retrieves a list of Pokémon habitats from the API.
+     *
+     * @param offset the query offset.
+     * @param limit the query limit.
+     *
+     * @return a list of Pokémon habitats.
+     */
+    NamedApiResourceList getPokemonHabitatList(int offset, int limit);
+
+    /**
+     * Retrieves the Pokémon habitat with the specified ID from the API.
+     *
+     * @param id the ID of the Pokémon habitat.
+     *
+     * @return the Pokémon habitat with the specified ID.
+     */
+    PokemonHabitat getPokemonHabitatById(int id);
+
+    /**
+     * Retrieves the Pokémon habitat with the specified name from the API.
+     *
+     * @param name the name of the Pokémon habitat.
+     *
+     * @return the Pokémon habitat with the specified name.
+     */
+    PokemonHabitat getPokemonHabitatByName(@NotNull String name);
+    //endregion
+
     //endregion
 }

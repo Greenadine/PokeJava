@@ -29,9 +29,9 @@ public class PokemonColor extends NamedApiResource {
     }
 
     /**
-     * Gets the names of the color.
+     * Gets the names of the color in different languages.
      *
-     * @return the names of the color.
+     * @return the names of the color in different languages.
      */
     public List<Name> getNames() {
         return names;
