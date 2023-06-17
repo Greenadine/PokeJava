@@ -1,4 +1,4 @@
-package dev.greenadine.pokejava.model.pokemon.form;
+package dev.greenadine.pokejava.model.pokemon;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import dev.greenadine.pokejava.model.common.resource.NamedApiResource;

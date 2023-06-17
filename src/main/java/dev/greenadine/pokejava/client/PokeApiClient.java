@@ -270,6 +270,25 @@ public class PokeApiClient implements PokeApi {
     }
     //endregion
 
+    //region Pokémon
+    @Override
+    public NamedApiResourceList getPokemon(int offset, int limit) {
+        return result(service.getPokemon(offset, limit));
+    }
+
+    @Override
+    public Pokemon getPokemonById(int id) {
+        return result(service.getPokemonById(id));
+    }
+
+    @Override
+    public Pokemon getPokemonByName(@NotNull String name) {
+        return result(service.getPokemonByName(name));
+    }
+    //endregion
+
+    //endregion
+
     /**
      * Executes the call synchronously and returns the result.
      *

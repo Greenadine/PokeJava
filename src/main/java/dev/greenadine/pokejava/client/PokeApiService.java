@@ -183,5 +183,16 @@ public interface PokeApiService {
     Call<PokemonForm> getPokemonFormByName(@Path("name") String name);
     //endregion
 
+    //region Pokémon
+    @GET("pokemon/")
+    Call<NamedApiResourceList> getPokemon(@Query("offset") int offset, @Query("limit") int limit);
+
+    @GET("pokemon/{id}/")
+    Call<Pokemon> getPokemonById(@Path("id") int id);
+
+    @GET("pokemon/{name}/")
+    Call<Pokemon> getPokemonByName(@Path("name") String name);
+    //endregion
+
     //endregion
 }

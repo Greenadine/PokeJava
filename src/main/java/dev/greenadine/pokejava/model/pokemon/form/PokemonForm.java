@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import dev.greenadine.pokejava.model.common.Name;
 import dev.greenadine.pokejava.model.common.resource.NamedApiResource;
+import dev.greenadine.pokejava.model.pokemon.PokemonFormType;
 
 import java.util.List;
 

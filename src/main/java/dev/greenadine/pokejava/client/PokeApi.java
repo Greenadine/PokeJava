@@ -2,10 +2,7 @@ package dev.greenadine.pokejava.client;
 
 import dev.greenadine.pokejava.model.common.resource.ApiResourceList;
 import dev.greenadine.pokejava.model.common.resource.NamedApiResourceList;
-import dev.greenadine.pokejava.model.pokemon.Characteristic;
-import dev.greenadine.pokejava.model.pokemon.EggGroup;
-import dev.greenadine.pokejava.model.pokemon.PokemonColor;
-import dev.greenadine.pokejava.model.pokemon.PokemonHabitat;
+import dev.greenadine.pokejava.model.pokemon.*;
 import dev.greenadine.pokejava.model.pokemon.ability.Ability;
 import dev.greenadine.pokejava.model.pokemon.form.PokemonForm;
 import dev.greenadine.pokejava.model.pokemon.gender.Gender;
@@ -450,6 +447,37 @@ public interface PokeApi {
      * @return the Pokémon form with the specified name.
      */
     PokemonForm getPokemonFormByName(@NotNull String name);
+    //endregion
+
+    //region Pokémon
+
+    /**
+     * Retrieves a list of Pokémon from the API.
+     *
+     * @param offset the query offset.
+     * @param limit the query limit.
+     *
+     * @return a list of Pokémon.
+     */
+    NamedApiResourceList getPokemon(int offset, int limit);
+
+    /**
+     * Retrieves the Pokémon with the specified ID from the API.
+     *
+     * @param id the ID of the Pokémon.
+     *
+     * @return the Pokémon with the specified ID.
+     */
+    Pokemon getPokemonById(int id);
+
+    /**
+     * Retrieves the Pokémon with the specified name from the API.
+     *
+     * @param name the name of the Pokémon.
+     *
+     * @return the Pokémon with the specified name.
+     */
+    Pokemon getPokemonByName(@NotNull String name);
     //endregion
 
     //endregion
