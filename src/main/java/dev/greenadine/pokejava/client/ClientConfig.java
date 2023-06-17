@@ -8,7 +8,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.concurrent.TimeUnit;
@@ -31,6 +30,7 @@ public abstract class ClientConfig {
 
     private final String baseUrl;
     private final OkHttpClient.Builder okHttpConfig;
+
     protected ClientConfig(@NotNull final String baseUrl) {
         this.baseUrl = baseUrl;
         okHttpConfig = new OkHttpClient.Builder()

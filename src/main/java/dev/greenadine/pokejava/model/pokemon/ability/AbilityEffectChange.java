@@ -2,7 +2,7 @@ package dev.greenadine.pokejava.model.pokemon.ability;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import dev.greenadine.pokejava.model.common.Effect;
-import dev.greenadine.pokejava.model.resource.NamedApiResource;
+import dev.greenadine.pokejava.model.common.resource.NamedApiResource;
 
 import java.util.List;
 

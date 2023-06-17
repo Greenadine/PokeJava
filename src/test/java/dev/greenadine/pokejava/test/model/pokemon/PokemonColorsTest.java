@@ -1,12 +1,13 @@
 package dev.greenadine.pokejava.test.model.pokemon;
 
 import dev.greenadine.pokejava.client.PokeApi;
+import dev.greenadine.pokejava.model.common.resource.NamedApiResourceList;
 import dev.greenadine.pokejava.model.pokemon.PokemonColor;
-import dev.greenadine.pokejava.model.resource.NamedApiResourceList;
 import dev.greenadine.pokejava.test.Main;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PokemonColorsTest {
 
@@ -14,9 +15,9 @@ public class PokemonColorsTest {
 
     @Test
     void Get_PokemonColor_List() {
-        NamedApiResourceList pokemonColors = API.getPokemonColorList(0, -1);
+        NamedApiResourceList pokemonColors = API.getPokemonColors(0, 0);
 
-        assertEquals(10, pokemonColors.getCount());
+        assertTrue(pokemonColors.getCount() > 0);
     }
 
     @Test

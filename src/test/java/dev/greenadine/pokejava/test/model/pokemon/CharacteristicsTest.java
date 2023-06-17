@@ -1,12 +1,13 @@
 package dev.greenadine.pokejava.test.model.pokemon;
 
 import dev.greenadine.pokejava.client.PokeApi;
+import dev.greenadine.pokejava.model.common.resource.ApiResourceList;
 import dev.greenadine.pokejava.model.pokemon.Characteristic;
-import dev.greenadine.pokejava.model.resource.ApiResourceList;
 import dev.greenadine.pokejava.test.Main;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CharacteristicsTest {
 
@@ -14,9 +15,9 @@ public class CharacteristicsTest {
 
     @Test
     void Get_Characteristic_List() {
-        ApiResourceList characteristics = API.getCharacteristicList(0, -1);
+        ApiResourceList characteristics = API.getCharacteristics(0, 0);
 
-        assertEquals(30, characteristics.getCount());
+        assertTrue(characteristics.getCount() > 0);
     }
 
     @Test

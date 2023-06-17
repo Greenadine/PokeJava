@@ -1,4 +1,4 @@
-package dev.greenadine.pokejava.model.resource;
+package dev.greenadine.pokejava.model.common.resource;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

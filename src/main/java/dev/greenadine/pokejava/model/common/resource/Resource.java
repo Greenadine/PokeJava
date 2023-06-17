@@ -1,4 +1,4 @@
-package dev.greenadine.pokejava.model.resource;
+package dev.greenadine.pokejava.model.common.resource;
 
 import org.jetbrains.annotations.Nullable;
 

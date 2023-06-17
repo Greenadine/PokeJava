@@ -10,16 +10,17 @@ import dev.greenadine.pokejava.model.pokemon.shape.PokemonShape;
 import dev.greenadine.pokejava.model.pokemon.species.PokemonSpecies;
 import dev.greenadine.pokejava.model.pokemon.stat.Stat;
 import dev.greenadine.pokejava.model.pokemon.type.Type;
-import dev.greenadine.pokejava.model.resource.ApiResourceList;
-import dev.greenadine.pokejava.model.resource.NamedApiResourceList;
+import dev.greenadine.pokejava.model.common.resource.ApiResourceList;
+import dev.greenadine.pokejava.model.common.resource.NamedApiResourceList;
 import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents the PokeAPI.
  *
- * @since 0.1.0
  * @see PokeApiClient
  * @see PokeApiService
+ *
+ * @since 0.1.0
  * @author Greenadine
  */
 public interface PokeApi {
@@ -35,7 +36,7 @@ public interface PokeApi {
      *
      * @return a list of stats.
      */
-    NamedApiResourceList getStatList(int offset, int limit);
+    NamedApiResourceList getStats(int offset, int limit);
 
     /**
      * Retrieves the stat with the specified ID from the API.
@@ -65,7 +66,7 @@ public interface PokeApi {
      *
      * @return a list of genders.
      */
-    NamedApiResourceList getGenderList(int offset, int limit);
+    NamedApiResourceList getGenders(int offset, int limit);
 
     /**
      * Retrieves the gender with the specified ID from the API.
@@ -95,7 +96,7 @@ public interface PokeApi {
      *
      * @return a list of growth rates.
      */
-    NamedApiResourceList getGrowthRateList(int offset, int limit);
+    NamedApiResourceList getGrowthRates(int offset, int limit);
 
     /**
      * Retrieves the growth rate with the specified ID from the API.
@@ -125,7 +126,7 @@ public interface PokeApi {
      *
      * @return a list of types.
      */
-    NamedApiResourceList getTypeList(int offset, int limit);
+    NamedApiResourceList getTypes(int offset, int limit);
 
     /**
      * Retrieves the type with the specified ID from the API.
@@ -156,7 +157,7 @@ public interface PokeApi {
      *
      * @return a list of abilities.
      */
-    NamedApiResourceList getAbilityList(int offset, int limit);
+    NamedApiResourceList getAbilities(int offset, int limit);
 
     /**
      * Retrieves the ability with the specified ID from the API.
@@ -187,7 +188,7 @@ public interface PokeApi {
      *
      * @return a list of characteristics.
      */
-    ApiResourceList getCharacteristicList(int offset, int limit);
+    ApiResourceList getCharacteristics(int offset, int limit);
 
     /**
      * Retrieves the characteristic with the specified ID from the API.
@@ -209,7 +210,7 @@ public interface PokeApi {
      *
      * @return a list of egg groups.
      */
-    NamedApiResourceList getEggGroupList(int offset, int limit);
+    NamedApiResourceList getEggGroups(int offset, int limit);
 
     /**
      * Retrieves the egg group with the specified ID from the API.
@@ -240,7 +241,7 @@ public interface PokeApi {
      *
      * @return a list of natures.
      */
-    NamedApiResourceList getNatureList(int offset, int limit);
+    NamedApiResourceList getNatures(int offset, int limit);
 
     /**
      * Retrieves the nature with the specified ID from the API.
@@ -271,7 +272,7 @@ public interface PokeApi {
      *
      * @return a list of Pokeathlon stats.
      */
-    NamedApiResourceList getPokeathlonStatList(int offset, int limit);
+    NamedApiResourceList getPokeathlonStats(int offset, int limit);
 
     /**
      * Retrieves the Pokeathlon stat with the specified ID from the API.
@@ -302,7 +303,7 @@ public interface PokeApi {
      *
      * @return a list of Pokémon colors.
      */
-    NamedApiResourceList getPokemonColorList(int offset, int limit);
+    NamedApiResourceList getPokemonColors(int offset, int limit);
 
     /**
      * Retrieves the Pokémon color with the specified ID from the API.
@@ -333,7 +334,7 @@ public interface PokeApi {
      *
      * @return a list of Pokémon habitats.
      */
-    NamedApiResourceList getPokemonHabitatList(int offset, int limit);
+    NamedApiResourceList getPokemonHabitats(int offset, int limit);
 
     /**
      * Retrieves the Pokémon habitat with the specified ID from the API.
@@ -364,7 +365,7 @@ public interface PokeApi {
      *
      * @return a list of Pokémon shapes.
      */
-    NamedApiResourceList getPokemonShapeList(int offset, int limit);
+    NamedApiResourceList getPokemonShapes(int offset, int limit);
 
     /**
      * Retrieves the Pokémon shape with the specified ID from the API.
@@ -395,7 +396,7 @@ public interface PokeApi {
      *
      * @return a list of Pokémon species.
      */
-    NamedApiResourceList getPokemonSpeciesList(int offset, int limit);
+    NamedApiResourceList getPokemonSpecies(int offset, int limit);
 
     /**
      * Retrieves the Pokémon species with the specified ID from the API.

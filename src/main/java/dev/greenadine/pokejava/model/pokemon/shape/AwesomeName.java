@@ -1,7 +1,7 @@
 package dev.greenadine.pokejava.model.pokemon.shape;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import dev.greenadine.pokejava.model.resource.NamedApiResource;
+import dev.greenadine.pokejava.model.common.resource.NamedApiResource;
 
 /**
  * Represents a localized "scientific" name for an API resource in a specific language.

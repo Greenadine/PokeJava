@@ -2,7 +2,7 @@ package dev.greenadine.pokejava.model.pokemon.growthrate;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import dev.greenadine.pokejava.model.resource.NamedApiResource;
+import dev.greenadine.pokejava.model.common.resource.NamedApiResource;
 import dev.greenadine.pokejava.model.common.Description;
 
 import java.util.List;

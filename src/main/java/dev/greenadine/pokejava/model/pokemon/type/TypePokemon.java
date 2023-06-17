@@ -1,7 +1,7 @@
 package dev.greenadine.pokejava.model.pokemon.type;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import dev.greenadine.pokejava.model.resource.NamedApiResource;
+import dev.greenadine.pokejava.model.common.resource.NamedApiResource;
 
 /**
  * Represents how a Pokémon's type influences its moves.

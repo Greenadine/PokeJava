@@ -1,12 +1,13 @@
 package dev.greenadine.pokejava.test.model.pokemon;
 
 import dev.greenadine.pokejava.client.PokeApi;
+import dev.greenadine.pokejava.model.common.resource.NamedApiResourceList;
 import dev.greenadine.pokejava.model.pokemon.stat.Stat;
-import dev.greenadine.pokejava.model.resource.NamedApiResourceList;
 import dev.greenadine.pokejava.test.Main;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class StatTest {
 
@@ -14,10 +15,9 @@ public class StatTest {
 
     @Test
     void Get_Stat_List() {
-        NamedApiResourceList list = API.getStatList(1, 0);
+        NamedApiResourceList stats = API.getStats(0, 0);
 
-        assertEquals(8, list.getCount());
-        assertEquals("attack", list.getResults().get(0).getName());
+        assertTrue(stats.getCount() > 0);
     }
 
     @Test

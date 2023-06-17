@@ -1,7 +1,7 @@
 package dev.greenadine.pokejava.model.common;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import dev.greenadine.pokejava.model.resource.NamedApiResource;
+import dev.greenadine.pokejava.model.common.resource.NamedApiResource;
 
 /**
  * Represents a game index of a resource in a specific generation.

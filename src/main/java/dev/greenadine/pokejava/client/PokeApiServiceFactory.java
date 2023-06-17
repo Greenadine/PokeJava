@@ -1,29 +1,33 @@
 package dev.greenadine.pokejava.client;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import dev.greenadine.pokejava.client.v2.PokeApiV2ClientConfig;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
+/**
+ * A factory for creating instances of {@link PokeApiService}.
+ *
+ * @since 0.1.0
+ * @author Greenadine
+ */
 public final class PokeApiServiceFactory {
 
     private PokeApiServiceFactory() {
         throw new UnsupportedOperationException("No instances of PokeApiServiceFactory may be created.");
     }
 
-    private static final PokeApiService DEFAULT_SERVICE;
+    public static final PokeApiService VERSION_2;
     static {
-        DEFAULT_SERVICE = createService(new PokeApiV2ClientConfig());
+        VERSION_2 = createService(new PokeApiV2ClientConfig());
     }
 
     /**
      * Returns the default PokéApi service.
-     * The current default service is for PokéApi v2.
      *
      * @return the default instance of {@link PokeApiService}.
      */
-    public static PokeApiService getDefaultService() {
-        return DEFAULT_SERVICE;
+    static PokeApiService getDefaultService() {
+        return VERSION_2;
     }
 
     /**
@@ -33,7 +37,7 @@ public final class PokeApiServiceFactory {
      *
      * @return a new {@link PokeApiService}.
      */
-    public static PokeApiService createService(ClientConfig config) {
+    static PokeApiService createService(ClientConfig config) {
         return new Retrofit.Builder()
                 .baseUrl(config.getBaseUrl())
                 .addConverterFactory(JacksonConverterFactory.create())

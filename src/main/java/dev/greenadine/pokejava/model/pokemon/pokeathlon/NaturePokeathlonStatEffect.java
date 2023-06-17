@@ -1,7 +1,7 @@
 package dev.greenadine.pokejava.model.pokemon.pokeathlon;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import dev.greenadine.pokejava.model.resource.NamedApiResource;
+import dev.greenadine.pokejava.model.common.resource.NamedApiResource;
 
 /**
  * Represents how a nature affects a Pokéathlon stat.

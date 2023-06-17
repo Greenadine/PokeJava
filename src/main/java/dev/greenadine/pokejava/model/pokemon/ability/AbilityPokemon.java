@@ -1,7 +1,7 @@
 package dev.greenadine.pokejava.model.pokemon.ability;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import dev.greenadine.pokejava.model.resource.NamedApiResource;
+import dev.greenadine.pokejava.model.common.resource.NamedApiResource;
 
 /**
  * Represents the link between a Pokémon and an ability.

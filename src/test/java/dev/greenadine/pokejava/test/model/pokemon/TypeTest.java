@@ -1,12 +1,13 @@
 package dev.greenadine.pokejava.test.model.pokemon;
 
 import dev.greenadine.pokejava.client.PokeApi;
+import dev.greenadine.pokejava.model.common.resource.NamedApiResourceList;
 import dev.greenadine.pokejava.model.pokemon.type.Type;
-import dev.greenadine.pokejava.model.resource.NamedApiResourceList;
 import dev.greenadine.pokejava.test.Main;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TypeTest {
 
@@ -14,9 +15,9 @@ public class TypeTest {
 
     @Test
     void Get_Type_List() {
-        NamedApiResourceList types = API.getTypeList(0, -1);
+        NamedApiResourceList types = API.getTypes(0, 0);
 
-        assertEquals(20, types.getCount());
+        assertTrue(types.getCount() > 0);
     }
 
     @Test

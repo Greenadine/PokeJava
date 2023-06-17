@@ -3,7 +3,7 @@ package dev.greenadine.pokejava.model.pokemon.type;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import dev.greenadine.pokejava.model.resource.NamedApiResource;
+import dev.greenadine.pokejava.model.common.resource.NamedApiResource;
 import dev.greenadine.pokejava.model.common.GenerationGameIndex;
 import dev.greenadine.pokejava.model.common.Name;
 import org.jetbrains.annotations.NotNull;

@@ -3,8 +3,8 @@ package dev.greenadine.pokejava.model.pokemon;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import dev.greenadine.pokejava.model.common.Description;
-import dev.greenadine.pokejava.model.resource.ApiResource;
-import dev.greenadine.pokejava.model.resource.NamedApiResource;
+import dev.greenadine.pokejava.model.common.resource.ApiResource;
+import dev.greenadine.pokejava.model.common.resource.NamedApiResource;
 
 import java.util.List;
 

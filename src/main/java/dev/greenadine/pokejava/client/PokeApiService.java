@@ -10,8 +10,8 @@ import dev.greenadine.pokejava.model.pokemon.shape.PokemonShape;
 import dev.greenadine.pokejava.model.pokemon.species.PokemonSpecies;
 import dev.greenadine.pokejava.model.pokemon.stat.Stat;
 import dev.greenadine.pokejava.model.pokemon.type.Type;
-import dev.greenadine.pokejava.model.resource.ApiResourceList;
-import dev.greenadine.pokejava.model.resource.NamedApiResourceList;
+import dev.greenadine.pokejava.model.common.resource.ApiResourceList;
+import dev.greenadine.pokejava.model.common.resource.NamedApiResourceList;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -20,10 +20,11 @@ import retrofit2.http.Query;
 /**
  * Represents the PokeAPI service.
  *
- * @since 0.1.0
  * @see PokeApi
  * @see PokeApiClient
  * @see PokeApiServiceFactory
+ *
+ * @since 0.1.0
  * @author Greenadine
  */
 public interface PokeApiService {

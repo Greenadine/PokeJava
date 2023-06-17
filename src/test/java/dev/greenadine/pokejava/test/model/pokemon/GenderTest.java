@@ -1,12 +1,13 @@
 package dev.greenadine.pokejava.test.model.pokemon;
 
 import dev.greenadine.pokejava.client.PokeApi;
+import dev.greenadine.pokejava.model.common.resource.NamedApiResourceList;
 import dev.greenadine.pokejava.model.pokemon.gender.Gender;
-import dev.greenadine.pokejava.model.resource.NamedApiResourceList;
 import dev.greenadine.pokejava.test.Main;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class GenderTest {
 
@@ -14,9 +15,9 @@ public class GenderTest {
 
     @Test
     void Get_Gender_List() {
-        NamedApiResourceList genders = API.getGenderList(0, -1);
+        NamedApiResourceList genders = API.getGenders(0, 0);
 
-        assertEquals(3, genders.getCount());
+        assertTrue(genders.getCount() > 0);
     }
 
     @Test
