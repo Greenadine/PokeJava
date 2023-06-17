@@ -1,7 +1,13 @@
 package dev.greenadine.pokejava.client;
 
-import dev.greenadine.pokejava.model.pokemon.*;
+import dev.greenadine.pokejava.model.common.resource.ApiResourceList;
+import dev.greenadine.pokejava.model.common.resource.NamedApiResourceList;
+import dev.greenadine.pokejava.model.pokemon.Characteristic;
+import dev.greenadine.pokejava.model.pokemon.EggGroup;
+import dev.greenadine.pokejava.model.pokemon.PokemonColor;
+import dev.greenadine.pokejava.model.pokemon.PokemonHabitat;
 import dev.greenadine.pokejava.model.pokemon.ability.Ability;
+import dev.greenadine.pokejava.model.pokemon.form.PokemonForm;
 import dev.greenadine.pokejava.model.pokemon.gender.Gender;
 import dev.greenadine.pokejava.model.pokemon.growthrate.GrowthRate;
 import dev.greenadine.pokejava.model.pokemon.nature.Nature;
@@ -10,8 +16,6 @@ import dev.greenadine.pokejava.model.pokemon.shape.PokemonShape;
 import dev.greenadine.pokejava.model.pokemon.species.PokemonSpecies;
 import dev.greenadine.pokejava.model.pokemon.stat.Stat;
 import dev.greenadine.pokejava.model.pokemon.type.Type;
-import dev.greenadine.pokejava.model.common.resource.ApiResourceList;
-import dev.greenadine.pokejava.model.common.resource.NamedApiResourceList;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -415,6 +419,37 @@ public interface PokeApi {
      * @return the Pokémon species with the specified name.
      */
     PokemonSpecies getPokemonSpeciesByName(@NotNull String name);
+    //endregion
+
+    //region Pokémon forms
+
+    /**
+     * Retrieves a list of Pokémon forms from the API.
+     *
+     * @param offset the query offset.
+     * @param limit the query limit.
+     *
+     * @return a list of Pokémon forms.
+     */
+    NamedApiResourceList getPokemonForms(int offset, int limit);
+
+    /**
+     * Retrieves the Pokémon form with the specified ID from the API.
+     *
+     * @param id the ID of the Pokémon form.
+     *
+     * @return the Pokémon form with the specified ID.
+     */
+    PokemonForm getPokemonFormById(int id);
+
+    /**
+     * Retrieves the Pokémon form with the specified name from the API.
+     *
+     * @param name the name of the Pokémon form.
+     *
+     * @return the Pokémon form with the specified name.
+     */
+    PokemonForm getPokemonFormByName(@NotNull String name);
     //endregion
 
     //endregion

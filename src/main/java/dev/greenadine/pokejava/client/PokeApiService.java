@@ -2,6 +2,7 @@ package dev.greenadine.pokejava.client;
 
 import dev.greenadine.pokejava.model.pokemon.*;
 import dev.greenadine.pokejava.model.pokemon.ability.Ability;
+import dev.greenadine.pokejava.model.pokemon.form.PokemonForm;
 import dev.greenadine.pokejava.model.pokemon.gender.Gender;
 import dev.greenadine.pokejava.model.pokemon.growthrate.GrowthRate;
 import dev.greenadine.pokejava.model.pokemon.nature.Nature;
@@ -33,7 +34,7 @@ public interface PokeApiService {
 
     //region Stats
     @GET("stat/")
-    Call<NamedApiResourceList> getStatList(@Query("offset") int offset, @Query("limit") int limit);
+    Call<NamedApiResourceList> getStats(@Query("offset") int offset, @Query("limit") int limit);
 
     @GET("stat/{id}/")
     Call<Stat> getStatById(@Path("id") int id);
@@ -44,7 +45,7 @@ public interface PokeApiService {
 
     //region Genders
     @GET("gender/")
-    Call<NamedApiResourceList> getGenderList(@Query("offset") int offset, @Query("limit") int limit);
+    Call<NamedApiResourceList> getGenders(@Query("offset") int offset, @Query("limit") int limit);
 
     @GET("gender/{id}/")
     Call<Gender> getGenderById(@Path("id") int id);
@@ -55,7 +56,7 @@ public interface PokeApiService {
 
     //region Growth rates
     @GET("growth-rate/")
-    Call<NamedApiResourceList> getGrowthRateList(@Query("offset") int offset, @Query("limit") int limit);
+    Call<NamedApiResourceList> getGrowthRates(@Query("offset") int offset, @Query("limit") int limit);
 
     @GET("growth-rate/{id}/")
     Call<GrowthRate> getGrowthRateById(@Path("id") int id);
@@ -66,7 +67,7 @@ public interface PokeApiService {
 
     //region Types
     @GET("type/")
-    Call<NamedApiResourceList> getTypeList(@Query("offset") int offset, @Query("limit") int limit);
+    Call<NamedApiResourceList> getTypes(@Query("offset") int offset, @Query("limit") int limit);
 
     @GET("type/{id}/")
     Call<Type> getTypeById(@Path("id") int id);
@@ -77,7 +78,7 @@ public interface PokeApiService {
 
     //region Abilities
     @GET("ability/")
-    Call<NamedApiResourceList> getAbilityList(@Query("offset") int offset, @Query("limit") int limit);
+    Call<NamedApiResourceList> getAbility(@Query("offset") int offset, @Query("limit") int limit);
 
     @GET("ability/{id}/")
     Call<Ability> getAbilityById(@Path("id") int id);
@@ -88,7 +89,7 @@ public interface PokeApiService {
 
     //region Characteristics
     @GET("characteristic/")
-    Call<ApiResourceList> getCharacteristicList(@Query("offset") int offset, @Query("limit") int limit);
+    Call<ApiResourceList> getCharacteristic(@Query("offset") int offset, @Query("limit") int limit);
 
     @GET("characteristic/{id}/")
     Call<Characteristic> getCharacteristic(@Path("id") int id);
@@ -96,7 +97,7 @@ public interface PokeApiService {
 
     //region Egg groups
     @GET("egg-group/")
-    Call<NamedApiResourceList> getEggGroupList(@Query("offset") int offset, @Query("limit") int limit);
+    Call<NamedApiResourceList> getEggGroup(@Query("offset") int offset, @Query("limit") int limit);
 
     @GET("egg-group/{id}/")
     Call<EggGroup> getEggGroupById(@Path("id") int id);
@@ -107,7 +108,7 @@ public interface PokeApiService {
 
     //region Natures
     @GET("nature/")
-    Call<NamedApiResourceList> getNatureList(@Query("offset") int offset, @Query("limit") int limit);
+    Call<NamedApiResourceList> getNature(@Query("offset") int offset, @Query("limit") int limit);
 
     @GET("nature/{id}/")
     Call<Nature> getNatureById(@Path("id") int id);
@@ -118,7 +119,7 @@ public interface PokeApiService {
 
     //region Pokeathlon stats
     @GET("pokeathlon-stat/")
-    Call<NamedApiResourceList> getPokeathlonStatList(@Query("offset") int offset, @Query("limit") int limit);
+    Call<NamedApiResourceList> getPokeathlonStat(@Query("offset") int offset, @Query("limit") int limit);
 
     @GET("pokeathlon-stat/{id}/")
     Call<PokeathlonStat> getPokeathlonStatById(@Path("id") int id);
@@ -129,7 +130,7 @@ public interface PokeApiService {
 
     //region Pokémon colors
     @GET("pokemon-color/")
-    Call<NamedApiResourceList> getPokemonColorList(@Query("offset") int offset, @Query("limit") int limit);
+    Call<NamedApiResourceList> getPokemonColor(@Query("offset") int offset, @Query("limit") int limit);
 
     @GET("pokemon-color/{id}/")
     Call<PokemonColor> getPokemonColorById(@Path("id") int id);
@@ -140,7 +141,7 @@ public interface PokeApiService {
 
     //region Pokémon habitats
     @GET("pokemon-habitat/")
-    Call<NamedApiResourceList> getPokemonHabitatList(@Query("offset") int offset, @Query("limit") int limit);
+    Call<NamedApiResourceList> getPokemonHabitat(@Query("offset") int offset, @Query("limit") int limit);
 
     @GET("pokemon-habitat/{id}/")
     Call<PokemonHabitat> getPokemonHabitatById(@Path("id") int id);
@@ -151,7 +152,7 @@ public interface PokeApiService {
 
     //region Pokémon shapes
     @GET("pokemon-shape/")
-    Call<NamedApiResourceList> getPokemonShapeList(@Query("offset") int offset, @Query("limit") int limit);
+    Call<NamedApiResourceList> getPokemonShape(@Query("offset") int offset, @Query("limit") int limit);
 
     @GET("pokemon-shape/{id}/")
     Call<PokemonShape> getPokemonShapeById(@Path("id") int id);
@@ -162,13 +163,24 @@ public interface PokeApiService {
 
     //region Pokémon species
     @GET("pokemon-species/")
-    Call<NamedApiResourceList> getPokemonSpeciesList(@Query("offset") int offset, @Query("limit") int limit);
+    Call<NamedApiResourceList> getPokemonSpecies(@Query("offset") int offset, @Query("limit") int limit);
 
     @GET("pokemon-species/{id}/")
     Call<PokemonSpecies> getPokemonSpeciesById(@Path("id") int id);
 
     @GET("pokemon-species/{name}/")
     Call<PokemonSpecies> getPokemonSpeciesByName(@Path("name") String name);
+    //endregion
+
+    //region Pokémon forms
+    @GET("pokemon-form/")
+    Call<NamedApiResourceList> getPokemonForms(@Query("offset") int offset, @Query("limit") int limit);
+
+    @GET("pokemon-form/{id}/")
+    Call<PokemonForm> getPokemonFormById(@Path("id") int id);
+
+    @GET("pokemon-form/{name}/")
+    Call<PokemonForm> getPokemonFormByName(@Path("name") String name);
     //endregion
 
     //endregion

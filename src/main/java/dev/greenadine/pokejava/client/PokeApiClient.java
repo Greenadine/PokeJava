@@ -2,6 +2,7 @@ package dev.greenadine.pokejava.client;
 
 import dev.greenadine.pokejava.model.pokemon.*;
 import dev.greenadine.pokejava.model.pokemon.ability.Ability;
+import dev.greenadine.pokejava.model.pokemon.form.PokemonForm;
 import dev.greenadine.pokejava.model.pokemon.gender.Gender;
 import dev.greenadine.pokejava.model.pokemon.growthrate.GrowthRate;
 import dev.greenadine.pokejava.model.pokemon.nature.Nature;
@@ -39,7 +40,7 @@ public class PokeApiClient implements PokeApi {
     //region Stats
     @Override
     public NamedApiResourceList getStats(int offset, int limit) {
-        return result(service.getStatList(offset, limit));
+        return result(service.getStats(offset, limit));
     }
 
     @Override
@@ -56,7 +57,7 @@ public class PokeApiClient implements PokeApi {
     //region Genders
     @Override
     public NamedApiResourceList getGenders(int offset, int limit) {
-        return result(service.getGenderList(offset, limit));
+        return result(service.getGenders(offset, limit));
     }
 
     @Override
@@ -73,7 +74,7 @@ public class PokeApiClient implements PokeApi {
     //region Growth rates
     @Override
     public NamedApiResourceList getGrowthRates(int offset, int limit) {
-        return result(service.getGrowthRateList(offset, limit));
+        return result(service.getGrowthRates(offset, limit));
     }
 
     @Override
@@ -90,7 +91,7 @@ public class PokeApiClient implements PokeApi {
     //region Types
     @Override
     public NamedApiResourceList getTypes(int offset, int limit) {
-        return result(service.getTypeList(offset, limit));
+        return result(service.getTypes(offset, limit));
     }
 
     @Override
@@ -107,7 +108,7 @@ public class PokeApiClient implements PokeApi {
     //region Abilities
     @Override
     public NamedApiResourceList getAbilities(int offset, int limit) {
-        return result(service.getAbilityList(offset, limit));
+        return result(service.getAbility(offset, limit));
     }
 
     @Override
@@ -124,7 +125,7 @@ public class PokeApiClient implements PokeApi {
     //region Characteristics
     @Override
     public ApiResourceList getCharacteristics(int offset, int limit) {
-        return result(service.getCharacteristicList(offset, limit));
+        return result(service.getCharacteristic(offset, limit));
     }
 
     @Override
@@ -136,7 +137,7 @@ public class PokeApiClient implements PokeApi {
     //region Egg groups
     @Override
     public NamedApiResourceList getEggGroups(int offset, int limit) {
-        return result(service.getEggGroupList(offset, limit));
+        return result(service.getEggGroup(offset, limit));
     }
 
     @Override
@@ -153,7 +154,7 @@ public class PokeApiClient implements PokeApi {
     //region Natures
     @Override
     public NamedApiResourceList getNatures(int offset, int limit) {
-        return result(service.getNatureList(offset, limit));
+        return result(service.getNature(offset, limit));
     }
 
     @Override
@@ -170,7 +171,7 @@ public class PokeApiClient implements PokeApi {
     //region Pokeathlon stats
     @Override
     public NamedApiResourceList getPokeathlonStats(int offset, int limit) {
-        return result(service.getPokeathlonStatList(offset, limit));
+        return result(service.getPokeathlonStat(offset, limit));
     }
 
     @Override
@@ -187,7 +188,7 @@ public class PokeApiClient implements PokeApi {
     //region Pokémon colors
     @Override
     public NamedApiResourceList getPokemonColors(int offset, int limit) {
-        return result(service.getPokemonColorList(offset, limit));
+        return result(service.getPokemonColor(offset, limit));
     }
 
     @Override
@@ -204,7 +205,7 @@ public class PokeApiClient implements PokeApi {
     //region Pokémon habitats
     @Override
     public NamedApiResourceList getPokemonHabitats(int offset, int limit) {
-        return result(service.getPokemonHabitatList(offset, limit));
+        return result(service.getPokemonHabitat(offset, limit));
     }
 
     @Override
@@ -221,7 +222,7 @@ public class PokeApiClient implements PokeApi {
     //region Pokémon shapes
     @Override
     public NamedApiResourceList getPokemonShapes(int offset, int limit) {
-        return result(service.getPokemonShapeList(offset, limit));
+        return result(service.getPokemonShape(offset, limit));
     }
 
     @Override
@@ -238,7 +239,7 @@ public class PokeApiClient implements PokeApi {
     //region Pokémon species
     @Override
     public NamedApiResourceList getPokemonSpecies(int offset, int limit) {
-        return result(service.getPokemonSpeciesList(offset, limit));
+        return result(service.getPokemonSpecies(offset, limit));
     }
 
     @Override
@@ -251,7 +252,22 @@ public class PokeApiClient implements PokeApi {
         return result(service.getPokemonSpeciesByName(name));
     }
     //endregion
-
+    
+    //region Pokémon forms
+    @Override
+    public NamedApiResourceList getPokemonForms(int offset, int limit) {
+        return result(service.getPokemonForms(offset, limit));
+    }
+    
+    @Override
+    public PokemonForm getPokemonFormById(int id) {
+        return result(service.getPokemonFormById(id));
+    }
+    
+    @Override
+    public PokemonForm getPokemonFormByName(@NotNull String name) {
+        return result(service.getPokemonFormByName(name));
+    }
     //endregion
 
     /**

@@ -20,6 +20,7 @@ import java.util.List;
  */
 public class PokemonSpecies extends NamedApiResource {
 
+    //region Fields
     private final int order;
     private final int genderRate;
     private final int captureRate;
@@ -45,6 +46,7 @@ public class PokemonSpecies extends NamedApiResource {
     private final List<Description> formDescriptions;
     private final List<Genus> genera;
     private final List<PokemonSpeciesVariety> varieties;
+    //endregion
 
     @JsonCreator
     public PokemonSpecies(@JsonProperty("id") int id,
