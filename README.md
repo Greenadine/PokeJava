@@ -1,7 +1,7 @@
 # PokéJava ![](https://img.shields.io/badge/version-v0.1.0--SNAPSHOT-blue?style=flat-square)
 A Java 16+ wrapper for the PokéAPI. 
 
-## Currently supported API data
+### Currently supported
 - Pokémons (including species, moves etc.)
 - Evolutions
 Everything else will follow in future updates.
