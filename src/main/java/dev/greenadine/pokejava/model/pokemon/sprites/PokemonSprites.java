@@ -1,6 +1,5 @@
-package dev.greenadine.pokejava.model.pokemon;
+package dev.greenadine.pokejava.model.pokemon.sprites;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
@@ -19,7 +18,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * @since 0.1.0
  * @author Greenadine
  */
-@JsonIgnoreProperties(ignoreUnknown = true)
 public record PokemonSprites(@JsonProperty("front_default") String frontDefault,
                              @JsonProperty("front_shiny") String frontShiny,
                              @JsonProperty("front_female") String frontFemale,
@@ -28,7 +26,8 @@ public record PokemonSprites(@JsonProperty("front_default") String frontDefault,
                              @JsonProperty("back_shiny") String backShiny,
                              @JsonProperty("back_female") String backFemale,
                              @JsonProperty("back_shiny_female") String backFemaleShiny,
-                             @JsonProperty("other") OtherSprites other) {
+                             @JsonProperty("other") PokemonOtherSprites other,
+                             @JsonProperty("versions") PokemonSpritesVersions versions) {
 
     // TODO inspect raw json data for an entire pokemon, with focus on sprites, something weird is going on there that isn't documented
 }

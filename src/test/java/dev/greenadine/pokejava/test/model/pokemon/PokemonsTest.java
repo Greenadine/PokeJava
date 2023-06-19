@@ -6,8 +6,7 @@ import dev.greenadine.pokejava.model.pokemon.Pokemon;
 import dev.greenadine.pokejava.test.Main;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PokemonsTest {
 
@@ -34,5 +33,12 @@ public class PokemonsTest {
 
         assertEquals(1, pokemon.getId());
         assertEquals("bulbasaur", pokemon.getName());
+    }
+
+    @Test
+    void Pokemon_Sprites() {
+        Pokemon pokemon = API.getPokemonById(1);
+
+        assertNotNull(pokemon.getSprites().versions().getGeneration("generation-v").getGame("black-white").animated().backDefault());
     }
 }

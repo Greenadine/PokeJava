@@ -6,6 +6,7 @@ import dev.greenadine.pokejava.model.common.VersionGameIndex;
 import dev.greenadine.pokejava.model.common.resource.NamedApiResource;
 import dev.greenadine.pokejava.model.pokemon.form.PokemonForm;
 import dev.greenadine.pokejava.model.pokemon.species.PokemonSpecies;
+import dev.greenadine.pokejava.model.pokemon.sprites.PokemonSprites;
 
 import java.util.List;
 
