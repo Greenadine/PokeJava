@@ -4,6 +4,7 @@ A Java 16+ wrapper for the PokéAPI.
 ### Currently supported
 - Pokémons (including species, moves etc.)
 - Evolutions
+
 Everything else will follow in future updates.
 
 ## Built with
