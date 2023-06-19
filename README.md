@@ -2,8 +2,18 @@
 A Java 16+ wrapper for the PokéAPI. 
 
 ### Currently supported
-- Pokémons (including species, moves etc.)
+- Pokémons
+- Pokémon species
+- Pokémon formes
+- Pokémon sprites
+- Pokémon habitats
 - Evolutions
+- Stats
+- Abilities
+- Types
+- Genders
+- Natures
+- Growth rates
 
 Everything else will follow in future updates.
 
