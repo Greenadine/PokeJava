@@ -2,6 +2,8 @@ package dev.greenadine.pokejava.client;
 
 import dev.greenadine.pokejava.model.pokemon.*;
 import dev.greenadine.pokejava.model.pokemon.ability.Ability;
+import dev.greenadine.pokejava.model.pokemon.evolution.EvolutionChain;
+import dev.greenadine.pokejava.model.pokemon.evolution.EvolutionTrigger;
 import dev.greenadine.pokejava.model.pokemon.form.PokemonForm;
 import dev.greenadine.pokejava.model.pokemon.gender.Gender;
 import dev.greenadine.pokejava.model.pokemon.growthrate.GrowthRate;
@@ -284,6 +286,35 @@ public class PokeApiClient implements PokeApi {
     @Override
     public Pokemon getPokemonByName(@NotNull String name) {
         return result(service.getPokemonByName(name));
+    }
+    //endregion
+
+    //region Evolution chains
+    @Override
+    public ApiResourceList getEvolutionChains(int offset, int limit) {
+        return result(service.getEvolutionChains(offset, limit));
+    }
+
+    @Override
+    public EvolutionChain getEvolutionChainById(int id) {
+        return result(service.getEvolutionChainById(id));
+    }
+    //endregion
+
+    //region Evolution triggers
+    @Override
+    public NamedApiResourceList getEvolutionTriggers(int offset, int limit) {
+        return result(service.getEvolutionTriggers(offset, limit));
+    }
+
+    @Override
+    public EvolutionTrigger getEvolutionTriggerById(int id) {
+        return result(service.getEvolutionTriggerById(id));
+    }
+
+    @Override
+    public EvolutionTrigger getEvolutionTriggerByName(@NotNull String name) {
+        return result(service.getEvolutionTriggerByName(name));
     }
     //endregion
 

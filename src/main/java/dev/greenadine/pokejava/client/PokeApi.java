@@ -4,6 +4,8 @@ import dev.greenadine.pokejava.model.common.resource.ApiResourceList;
 import dev.greenadine.pokejava.model.common.resource.NamedApiResourceList;
 import dev.greenadine.pokejava.model.pokemon.*;
 import dev.greenadine.pokejava.model.pokemon.ability.Ability;
+import dev.greenadine.pokejava.model.pokemon.evolution.EvolutionChain;
+import dev.greenadine.pokejava.model.pokemon.evolution.EvolutionTrigger;
 import dev.greenadine.pokejava.model.pokemon.form.PokemonForm;
 import dev.greenadine.pokejava.model.pokemon.gender.Gender;
 import dev.greenadine.pokejava.model.pokemon.growthrate.GrowthRate;
@@ -478,6 +480,59 @@ public interface PokeApi {
      * @return the Pokémon with the specified name.
      */
     Pokemon getPokemonByName(@NotNull String name);
+    //endregion
+
+    //region Evolution chains
+
+    /**
+     * Retrieves a list of evolution chains from the API.
+     *
+     * @param offset the query offset.
+     * @param limit the query limit.
+     *
+     * @return a list of evolution chains.
+     */
+    ApiResourceList getEvolutionChains(int offset, int limit);
+
+    /**
+     * Retrieves an evolution chain with the specified ID from the API.
+     *
+     * @param id the ID of the evolution chain.
+     *
+     * @return the evolution chain with the specified ID.
+     */
+    EvolutionChain getEvolutionChainById(int id);
+    //endregion
+
+    //region Evolution triggers
+
+    /**
+     * Retrieves a list of evolution triggers from the API.
+     *
+     * @param offset the query offset.
+     * @param limit the query limit.
+     *
+     * @return a list of evolution triggers.
+     */
+    NamedApiResourceList getEvolutionTriggers(int offset, int limit);
+
+    /**
+     * Retrieves an evolution trigger with the specified ID from the API.
+     *
+     * @param id the ID of the evolution trigger.
+     *
+     * @return the evolution trigger with the specified ID.
+     */
+    EvolutionTrigger getEvolutionTriggerById(int id);
+
+    /**
+     * Retrieves an evolution trigger with the specified name from the API.
+     *
+     * @param name the name of the evolution trigger.
+     *
+     * @return the evolution trigger with the specified name.
+     */
+    EvolutionTrigger getEvolutionTriggerByName(@NotNull String name);
     //endregion
 
     //endregion

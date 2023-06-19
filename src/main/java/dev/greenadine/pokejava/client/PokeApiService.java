@@ -2,6 +2,8 @@ package dev.greenadine.pokejava.client;
 
 import dev.greenadine.pokejava.model.pokemon.*;
 import dev.greenadine.pokejava.model.pokemon.ability.Ability;
+import dev.greenadine.pokejava.model.pokemon.evolution.EvolutionChain;
+import dev.greenadine.pokejava.model.pokemon.evolution.EvolutionTrigger;
 import dev.greenadine.pokejava.model.pokemon.form.PokemonForm;
 import dev.greenadine.pokejava.model.pokemon.gender.Gender;
 import dev.greenadine.pokejava.model.pokemon.growthrate.GrowthRate;
@@ -192,6 +194,25 @@ public interface PokeApiService {
 
     @GET("pokemon/{name}/")
     Call<Pokemon> getPokemonByName(@Path("name") String name);
+    //endregion
+
+    //region Evolution chains
+    @GET("evolution-chain/")
+    Call<ApiResourceList> getEvolutionChains(@Query("offset") int offset, @Query("limit") int limit);
+
+    @GET("evolution-chain/{id}/")
+    Call<EvolutionChain> getEvolutionChainById(@Path("id") int id);
+    //endregion
+
+    //region Evolution triggers
+    @GET("evolution-trigger/")
+    Call<NamedApiResourceList> getEvolutionTriggers(@Query("offset") int offset, @Query("limit") int limit);
+
+    @GET("evolution-trigger/{id}/")
+    Call<EvolutionTrigger> getEvolutionTriggerById(@Path("id") int id);
+
+    @GET("evolution-trigger/{name}/")
+    Call<EvolutionTrigger> getEvolutionTriggerByName(@Path("name") String name);
     //endregion
 
     //endregion
