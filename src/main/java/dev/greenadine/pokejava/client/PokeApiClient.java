@@ -404,6 +404,23 @@ public class PokeApiClient implements PokeApi {
     }
     //endregion
 
+    //region Move ailments
+    @Override
+    public NamedApiResourceList getMoveAilments(int offset, int limit) {
+        return result(service.getMoveAilments(offset, limit));
+    }
+
+    @Override
+    public MoveAilment getMoveAilmentById(int id) {
+        return result(service.getMoveAilmentById(id));
+    }
+
+    @Override
+    public MoveAilment getMoveAilmentByName(@NotNull String name) {
+        return result(service.getMoveAilmentByName(name));
+    }
+    //endregion
+
     //endregion
 
     /**

@@ -691,5 +691,36 @@ public interface PokeApi {
     MoveBattleStyle getMoveBattleStyleByName(@NotNull String name);
     //endregion
 
+    //region Move ailments
+
+    /**
+     * Retrieves a list of move ailments from the API.
+     *
+     * @param offset the query offset.
+     * @param limit the query limit.
+     *
+     * @return a list of move ailments.
+     */
+    NamedApiResourceList getMoveAilments(int offset, int limit);
+
+    /**
+     * Retrieves a move ailment with the specified ID from the API.
+     *
+     * @param id the ID of the move ailment.
+     *
+     * @return the move ailment with the specified ID.
+     */
+    MoveAilment getMoveAilmentById(int id);
+
+    /**
+     * Retrieves a move ailment with the specified name from the API.
+     *
+     * @param name the name of the move ailment.
+     *
+     * @return the move ailment with the specified name.
+     */
+    MoveAilment getMoveAilmentByName(@NotNull String name);
+    //endregion
+
     //endregion
 }

@@ -271,5 +271,16 @@ public interface PokeApiService {
     Call<MoveBattleStyle> getMoveBattleStyleByName(@Path("name") String name);
     //endregion
 
+    //region Move ailments
+    @GET("move-ailment/")
+    Call<NamedApiResourceList> getMoveAilments(@Query("offset") int offset, @Query("limit") int limit);
+
+    @GET("move-ailment/{id}/")
+    Call<MoveAilment> getMoveAilmentById(@Path("id") int id);
+
+    @GET("move-ailment/{name}/")
+    Call<MoveAilment> getMoveAilmentByName(@Path("name") String name);
+    //endregion
+
     //endregion
 }
