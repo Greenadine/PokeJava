@@ -2,6 +2,7 @@ package dev.greenadine.pokejava.client;
 
 import dev.greenadine.pokejava.model.common.resource.ApiResourceList;
 import dev.greenadine.pokejava.model.common.resource.NamedApiResourceList;
+import dev.greenadine.pokejava.model.move.MoveTarget;
 import dev.greenadine.pokejava.model.pokemon.*;
 import dev.greenadine.pokejava.model.pokemon.ability.Ability;
 import dev.greenadine.pokejava.model.pokemon.evolution.EvolutionChain;
@@ -533,6 +534,37 @@ public interface PokeApi {
      * @return the evolution trigger with the specified name.
      */
     EvolutionTrigger getEvolutionTriggerByName(@NotNull String name);
+    //endregion
+
+    //region Move targets
+
+    /**
+     * Retrieves a list of move targets from the API.
+     *
+     * @param offset the query offset.
+     * @param limit the query limit.
+     *
+     * @return a list of move targets.
+     */
+    NamedApiResourceList getMoveTargets(int offset, int limit);
+
+    /**
+     * Retrieves a move target with the specified ID from the API.
+     *
+     * @param id the ID of the move target.
+     *
+     * @return the move target with the specified ID.
+     */
+    MoveTarget getMoveTargetById(int id);
+
+    /**
+     * Retrieves a move target with the specified name from the API.
+     *
+     * @param name the name of the move target.
+     *
+     * @return the move target with the specified name.
+     */
+    MoveTarget getMoveTargetByName(@NotNull String name);
     //endregion
 
     //endregion

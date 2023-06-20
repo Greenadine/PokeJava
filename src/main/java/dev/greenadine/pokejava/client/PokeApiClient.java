@@ -1,5 +1,6 @@
 package dev.greenadine.pokejava.client;
 
+import dev.greenadine.pokejava.model.move.MoveTarget;
 import dev.greenadine.pokejava.model.pokemon.*;
 import dev.greenadine.pokejava.model.pokemon.ability.Ability;
 import dev.greenadine.pokejava.model.pokemon.evolution.EvolutionChain;
@@ -315,6 +316,23 @@ public class PokeApiClient implements PokeApi {
     @Override
     public EvolutionTrigger getEvolutionTriggerByName(@NotNull String name) {
         return result(service.getEvolutionTriggerByName(name));
+    }
+    //endregion
+
+    //region Move targets
+    @Override
+    public NamedApiResourceList getMoveTargets(int offset, int limit) {
+        return result(service.getMoveTargets(offset, limit));
+    }
+
+    @Override
+    public MoveTarget getMoveTargetById(int id) {
+        return result(service.getMoveTargetById(id));
+    }
+
+    @Override
+    public MoveTarget getMoveTargetByName(@NotNull String name) {
+        return result(service.getMoveTargetByName(name));
     }
     //endregion
 

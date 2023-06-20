@@ -1,5 +1,6 @@
 package dev.greenadine.pokejava.client;
 
+import dev.greenadine.pokejava.model.move.MoveTarget;
 import dev.greenadine.pokejava.model.pokemon.*;
 import dev.greenadine.pokejava.model.pokemon.ability.Ability;
 import dev.greenadine.pokejava.model.pokemon.evolution.EvolutionChain;
@@ -213,6 +214,17 @@ public interface PokeApiService {
 
     @GET("evolution-trigger/{name}/")
     Call<EvolutionTrigger> getEvolutionTriggerByName(@Path("name") String name);
+    //endregion
+
+    //region Move targets
+    @GET("move-target/")
+    Call<NamedApiResourceList> getMoveTargets(@Query("offset") int offset, @Query("limit") int limit);
+
+    @GET("move-target/{id}/")
+    Call<MoveTarget> getMoveTargetById(@Path("id") int id);
+
+    @GET("move-target/{name}/")
+    Call<MoveTarget> getMoveTargetByName(@Path("name") String name);
     //endregion
 
     //endregion
