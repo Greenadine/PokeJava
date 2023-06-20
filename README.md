@@ -1,4 +1,4 @@
-# PokéJava ![](https://img.shields.io/badge/version-v0.1.0--SNAPSHOT-blue?style=flat-square)
+# PokéJava ![](https://img.shields.io/badge/version-To_be_released-blue?style=flat-square)
 A Java 16+ wrapper for the PokéAPI.  
 
 ### Release
