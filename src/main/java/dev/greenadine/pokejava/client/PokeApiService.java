@@ -2,10 +2,7 @@ package dev.greenadine.pokejava.client;
 
 import dev.greenadine.pokejava.model.common.resource.ApiResourceList;
 import dev.greenadine.pokejava.model.common.resource.NamedApiResourceList;
-import dev.greenadine.pokejava.model.move.MoveCategory;
-import dev.greenadine.pokejava.model.move.MoveDamageClass;
-import dev.greenadine.pokejava.model.move.MoveLearnMethod;
-import dev.greenadine.pokejava.model.move.MoveTarget;
+import dev.greenadine.pokejava.model.move.*;
 import dev.greenadine.pokejava.model.pokemon.*;
 import dev.greenadine.pokejava.model.pokemon.ability.Ability;
 import dev.greenadine.pokejava.model.pokemon.evolution.EvolutionChain;
@@ -261,6 +258,17 @@ public interface PokeApiService {
 
     @GET("move-damage-class/{name}/")
     Call<MoveDamageClass> getMoveDamageClassByName(@Path("name") String name);
+    //endregion
+
+    //region Move battle styles
+    @GET("move-battle-style/")
+    Call<NamedApiResourceList> getMoveBattleStyles(@Query("offset") int offset, @Query("limit") int limit);
+
+    @GET("move-battle-style/{id}/")
+    Call<MoveBattleStyle> getMoveBattleStyleById(@Path("id") int id);
+
+    @GET("move-battle-style/{name}/")
+    Call<MoveBattleStyle> getMoveBattleStyleByName(@Path("name") String name);
     //endregion
 
     //endregion

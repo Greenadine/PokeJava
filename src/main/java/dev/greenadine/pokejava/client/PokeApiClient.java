@@ -1,9 +1,6 @@
 package dev.greenadine.pokejava.client;
 
-import dev.greenadine.pokejava.model.move.MoveCategory;
-import dev.greenadine.pokejava.model.move.MoveDamageClass;
-import dev.greenadine.pokejava.model.move.MoveLearnMethod;
-import dev.greenadine.pokejava.model.move.MoveTarget;
+import dev.greenadine.pokejava.model.move.*;
 import dev.greenadine.pokejava.model.pokemon.*;
 import dev.greenadine.pokejava.model.pokemon.ability.Ability;
 import dev.greenadine.pokejava.model.pokemon.evolution.EvolutionChain;
@@ -387,6 +384,23 @@ public class PokeApiClient implements PokeApi {
     @Override
     public MoveDamageClass getMoveDamageClassByName(@NotNull String name) {
         return result(service.getMoveDamageClassByName(name));
+    }
+    //endregion
+
+    //region Move battle styles
+    @Override
+    public NamedApiResourceList getMoveBattleStyles(int offset, int limit) {
+        return result(service.getMoveBattleStyles(offset, limit));
+    }
+
+    @Override
+    public MoveBattleStyle getMoveBattleStyleById(int id) {
+        return result(service.getMoveBattleStyleById(id));
+    }
+
+    @Override
+    public MoveBattleStyle getMoveBattleStyleByName(@NotNull String name) {
+        return result(service.getMoveBattleStyleByName(name));
     }
     //endregion
 

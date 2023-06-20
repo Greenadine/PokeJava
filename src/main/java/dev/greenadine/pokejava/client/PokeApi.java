@@ -2,10 +2,7 @@ package dev.greenadine.pokejava.client;
 
 import dev.greenadine.pokejava.model.common.resource.ApiResourceList;
 import dev.greenadine.pokejava.model.common.resource.NamedApiResourceList;
-import dev.greenadine.pokejava.model.move.MoveCategory;
-import dev.greenadine.pokejava.model.move.MoveDamageClass;
-import dev.greenadine.pokejava.model.move.MoveLearnMethod;
-import dev.greenadine.pokejava.model.move.MoveTarget;
+import dev.greenadine.pokejava.model.move.*;
 import dev.greenadine.pokejava.model.pokemon.*;
 import dev.greenadine.pokejava.model.pokemon.ability.Ability;
 import dev.greenadine.pokejava.model.pokemon.evolution.EvolutionChain;
@@ -661,6 +658,37 @@ public interface PokeApi {
      * @return the move damage class with the specified name.
      */
     MoveDamageClass getMoveDamageClassByName(@NotNull String name);
+    //endregion
+
+    //region Move battle styles
+
+    /**
+     * Retrieves a list of move battle styles from the API.
+     *
+     * @param offset the query offset.
+     * @param limit the query limit.
+     *
+     * @return a list of move battle styles.
+     */
+    NamedApiResourceList getMoveBattleStyles(int offset, int limit);
+
+    /**
+     * Retrieves a move battle style with the specified ID from the API.
+     *
+     * @param id the ID of the move battle style.
+     *
+     * @return the move battle style with the specified ID.
+     */
+    MoveBattleStyle getMoveBattleStyleById(int id);
+
+    /**
+     * Retrieves a move battle style with the specified name from the API.
+     *
+     * @param name the name of the move battle style.
+     *
+     * @return the move battle style with the specified name.
+     */
+    MoveBattleStyle getMoveBattleStyleByName(@NotNull String name);
     //endregion
 
     //endregion
