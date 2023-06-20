@@ -2,6 +2,7 @@ package dev.greenadine.pokejava.client;
 
 import dev.greenadine.pokejava.model.common.resource.ApiResourceList;
 import dev.greenadine.pokejava.model.common.resource.NamedApiResourceList;
+import dev.greenadine.pokejava.model.move.MoveCategory;
 import dev.greenadine.pokejava.model.move.MoveLearnMethod;
 import dev.greenadine.pokejava.model.move.MoveTarget;
 import dev.greenadine.pokejava.model.pokemon.*;
@@ -237,6 +238,17 @@ public interface PokeApiService {
 
     @GET("move-learn-method/{name}/")
     Call<MoveLearnMethod> getMoveLearnMethodByName(@Path("name") String name);
+    //endregion
+
+    //region Move categories
+    @GET("move-category/")
+    Call<NamedApiResourceList> getMoveCategories(@Query("offset") int offset, @Query("limit") int limit);
+
+    @GET("move-category/{id}/")
+    Call<MoveCategory> getMoveCategoryById(@Path("id") int id);
+
+    @GET("move-category/{name}/")
+    Call<MoveCategory> getMoveCategoryByName(@Path("name") String name);
     //endregion
 
     //endregion
