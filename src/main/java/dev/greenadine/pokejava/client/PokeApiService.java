@@ -216,6 +216,17 @@ public interface PokeApiService {
     Call<EvolutionTrigger> getEvolutionTriggerByName(@Path("name") String name);
     //endregion
 
+    //region Moves
+    @GET("move/")
+    Call<NamedApiResourceList> getMoves(@Query("offset") int offset, @Query("limit") int limit);
+
+    @GET("move/{id}/")
+    Call<Move> getMoveById(@Path("id") int id);
+
+    @GET("move/{name}/")
+    Call<Move> getMoveByName(@Path("name") String name);
+    //endregion
+
     //region Move targets
     @GET("move-target/")
     Call<NamedApiResourceList> getMoveTargets(@Query("offset") int offset, @Query("limit") int limit);

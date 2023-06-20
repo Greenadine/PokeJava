@@ -536,6 +536,37 @@ public interface PokeApi {
     EvolutionTrigger getEvolutionTriggerByName(@NotNull String name);
     //endregion
 
+    //region Moves
+
+    /**
+     * Retrieves a list of moves from the API.
+     *
+     * @param offset the query offset.
+     * @param limit the query limit.
+     *
+     * @return a list of moves.
+     */
+    NamedApiResourceList getMoves(int offset, int limit);
+
+    /**
+     * Retrieves a move by id.
+     *
+     * @param id the id of the move.
+     *
+     * @return the move with the specified id.
+     */
+    Move getMoveById(int id);
+
+    /**
+     * Retrieves a move by name.
+     *
+     * @param name the name of the move.
+     *
+     * @return the move with the specified name.
+     */
+    Move getMoveByName(@NotNull String name);
+    //endregion
+
     //region Move targets
 
     /**
