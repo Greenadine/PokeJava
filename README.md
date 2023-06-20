@@ -1,4 +1,4 @@
-# PokéJava ![](https://img.shields.io/badge/version-0.1.0-blue?style=flat-square) ![](https://img.shields.io/github/license/Greenadine/PokeJava?style=flat-square)
+# PokéJava ![](https://img.shields.io/badge/version-v0.1.0-blue?style=flat-square) ![](https://img.shields.io/github/license/Greenadine/PokeJava?style=flat-square)
 A Java 16+ wrapper for the PokéAPI. This wrapper is still a work in progress, and does not yet support all endpoints. See below for a list of currently supported endpoints.
 
 ## Installation
