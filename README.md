@@ -21,5 +21,4 @@ Everything else will follow in future updates.
 
 ## Built with
 - [Jackson](https://github.com/FasterXML/jackson) - JSON library
-- [Retrofit](https://github.com/square/retrofit) - type-safe REST/HTTP client
-- [OkHttp](https://github.com/square/okhttp) - HTTP client
+- [OkHttp](https://github.com/square/okhttp) & [Retrofit](https://github.com/square/retrofit) - HTTP client
