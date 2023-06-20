@@ -4,6 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <properties>
+        <maven.compiler.source>16</maven.compiler.source>
+        <maven.compiler.target>16</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
     <name>PokéJava</name>
     <description>Java 16+ wrapper for the PokéAPI.</description>
 
@@ -37,12 +43,6 @@
             <url>https://repo.greenadine.dev/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
-
-    <properties>
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 
     <build>
         <plugins>
@@ -101,48 +101,74 @@
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.10.0-M1</version>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>opentest4j</artifactId>
+                    <groupId>org.opentest4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>junit-platform-commons</artifactId>
+                    <groupId>org.junit.platform</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>apiguardian-api</artifactId>
+                    <groupId>org.apiguardian</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!-- JSON library -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.15.1</version>
+            <scope>compile</scope>
         </dependency>
         <!-- HTTP client -->
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp</artifactId>
             <version>4.11.0</version>
+            <scope>compile</scope>
         </dependency>
         <!-- Retrofit -->
         <dependency>
             <groupId>com.squareup.retrofit2</groupId>
             <artifactId>retrofit</artifactId>
             <version>2.7.2</version>
+            <scope>compile</scope>
         </dependency>
         <!-- Retrofit JSON converter -->
         <dependency>
             <groupId>com.squareup.retrofit2</groupId>
             <artifactId>converter-jackson</artifactId>
             <version>2.10.0-20230517</version>
+            <scope>compile</scope>
         </dependency>
         <!-- Guava -->
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>31.1-jre</version>
+            <scope>compile</scope>
         </dependency>
         <!-- Annotations -->
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
             <version>24.0.1</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13.1</version>
+            <version>4.13.2</version>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>hamcrest-core</artifactId>
+                    <groupId>org.hamcrest</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 
