@@ -1,7 +1,7 @@
 package dev.greenadine.pokejava.model.pokemon.gender;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import dev.greenadine.pokejava.annotation.Category;
+import dev.greenadine.pokejava.annotation.ResourceCategory;
 import dev.greenadine.pokejava.model.common.resource.NamedApiResource;
 
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.List;
  * @since 0.1.0
  * @author Greenadine
  */
-@Category("gender")
+@ResourceCategory("gender")
 public class Gender extends NamedApiResource {
 
     private final List<SpeciesGenderRelation> speciesGenderRelationList;

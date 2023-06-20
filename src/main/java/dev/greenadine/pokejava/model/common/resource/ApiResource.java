@@ -3,7 +3,7 @@ package dev.greenadine.pokejava.model.common.resource;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.Preconditions;
-import dev.greenadine.pokejava.annotation.Category;
+import dev.greenadine.pokejava.annotation.ResourceCategory;
 import dev.greenadine.pokejava.util.AnnotationUtils;
 import org.jetbrains.annotations.NotNull;
 
@@ -23,9 +23,9 @@ public class ApiResource implements Resource {
     private final String url;
 
     protected ApiResource(int id) {
-        Preconditions.checkState(AnnotationUtils.hasAnnotation(this.getClass(), Category.class), "Resource is missing @Category annotation.");
+        Preconditions.checkState(AnnotationUtils.hasAnnotation(this.getClass(), ResourceCategory.class), "Resource is missing @Category annotation.");
         this.id = id;
-        this.category = AnnotationUtils.getValue(this.getClass(), Category.class);
+        this.category = AnnotationUtils.getValue(this.getClass(), ResourceCategory.class);
         this.url = "/" + category + "/" + id + "/";
     }
 

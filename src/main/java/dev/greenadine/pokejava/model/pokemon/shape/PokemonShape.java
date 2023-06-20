@@ -2,7 +2,7 @@ package dev.greenadine.pokejava.model.pokemon.shape;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import dev.greenadine.pokejava.annotation.Category;
+import dev.greenadine.pokejava.annotation.ResourceCategory;
 import dev.greenadine.pokejava.model.common.Name;
 import dev.greenadine.pokejava.model.common.resource.NamedApiResource;
 
@@ -14,7 +14,7 @@ import java.util.List;
  * @since 0.1.0
  * @author Greenadine
  */
-@Category("pokemon-shape")
+@ResourceCategory("pokemon-shape")
 public class PokemonShape extends NamedApiResource {
 
     private final List<AwesomeName> awesoneNames;

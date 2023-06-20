@@ -1,7 +1,7 @@
 package dev.greenadine.pokejava.model.pokemon.evolution;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import dev.greenadine.pokejava.annotation.Category;
+import dev.greenadine.pokejava.annotation.ResourceCategory;
 import dev.greenadine.pokejava.model.common.Name;
 import dev.greenadine.pokejava.model.common.resource.NamedApiResource;
 
@@ -13,7 +13,7 @@ import java.util.List;
  * @since 0.1.0
  * @author Greenadine
  */
-@Category("evolution-trigger")
+@ResourceCategory("evolution-trigger")
 public class EvolutionTrigger extends NamedApiResource {
 
     private final List<Name> names;

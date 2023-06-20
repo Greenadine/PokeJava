@@ -2,7 +2,7 @@ package dev.greenadine.pokejava.model.pokemon.species;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import dev.greenadine.pokejava.annotation.Category;
+import dev.greenadine.pokejava.annotation.ResourceCategory;
 import dev.greenadine.pokejava.model.common.Description;
 import dev.greenadine.pokejava.model.common.FlavorText;
 import dev.greenadine.pokejava.model.common.Name;
@@ -19,7 +19,7 @@ import java.util.List;
  * @since 0.1.0
  * @author Greenadine
  */
-@Category("pokemon-species")
+@ResourceCategory("pokemon-species")
 public class PokemonSpecies extends NamedApiResource {
 
     //region Fields

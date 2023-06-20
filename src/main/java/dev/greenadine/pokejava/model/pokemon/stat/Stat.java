@@ -2,7 +2,7 @@ package dev.greenadine.pokejava.model.pokemon.stat;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import dev.greenadine.pokejava.annotation.Category;
+import dev.greenadine.pokejava.annotation.ResourceCategory;
 import dev.greenadine.pokejava.model.common.Name;
 import dev.greenadine.pokejava.model.common.resource.ApiResource;
 import dev.greenadine.pokejava.model.common.resource.NamedApiResource;
@@ -15,7 +15,7 @@ import java.util.List;
  * @since 0.1.0
  * @author Greenadine
  */
-@Category("stat")
+@ResourceCategory("stat")
 public class Stat extends NamedApiResource {
 
     private final int gameIndex;

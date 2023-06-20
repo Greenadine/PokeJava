@@ -2,7 +2,7 @@ package dev.greenadine.pokejava.model.pokemon.growthrate;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import dev.greenadine.pokejava.annotation.Category;
+import dev.greenadine.pokejava.annotation.ResourceCategory;
 import dev.greenadine.pokejava.model.common.resource.NamedApiResource;
 import dev.greenadine.pokejava.model.common.Description;
 
@@ -14,7 +14,7 @@ import java.util.List;
  * @since 0.1.0
  * @author Greenadine
  */
-@Category("growth-rate")
+@ResourceCategory("growth-rate")
 public class GrowthRate extends NamedApiResource {
 
     private final String formula;
