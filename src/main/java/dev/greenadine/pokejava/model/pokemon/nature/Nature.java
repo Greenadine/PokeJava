@@ -2,6 +2,7 @@ package dev.greenadine.pokejava.model.pokemon.nature;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import dev.greenadine.pokejava.annotation.Category;
 import dev.greenadine.pokejava.model.common.Name;
 import dev.greenadine.pokejava.model.common.resource.NamedApiResource;
 
@@ -13,6 +14,7 @@ import java.util.List;
  * @since 0.1.0
  * @author Greenadine
  */
+@Category("nature")
 public class Nature extends NamedApiResource {
 
     private final NamedApiResource decreasedStat;
@@ -33,7 +35,7 @@ public class Nature extends NamedApiResource {
                   @JsonProperty("pokeathlon_stat_changes") List<NatureStatChange> pokeathlonStatChanges,
                   @JsonProperty("move_battle_style_preferences") List<MoveBattleStylePreference> moveBattleStylePreferences,
                   @JsonProperty("names") List<Name> names) {
-        super(id, "nature", name);
+        super(id, name);
 
         this.decreasedStat = decreasedStat;
         this.increasedStat = increasedStat;

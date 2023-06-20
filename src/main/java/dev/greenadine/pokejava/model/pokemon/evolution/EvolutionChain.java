@@ -1,6 +1,7 @@
 package dev.greenadine.pokejava.model.pokemon.evolution;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import dev.greenadine.pokejava.annotation.Category;
 import dev.greenadine.pokejava.model.common.resource.ApiResource;
 import dev.greenadine.pokejava.model.common.resource.NamedApiResource;
 
@@ -10,6 +11,7 @@ import dev.greenadine.pokejava.model.common.resource.NamedApiResource;
  * @since 0.1.0
  * @author Greenadine
  */
+@Category("evolution-chain")
 public class EvolutionChain extends ApiResource {
 
     private final NamedApiResource item;
@@ -18,7 +20,7 @@ public class EvolutionChain extends ApiResource {
     public EvolutionChain(@JsonProperty("id") int id,
                           @JsonProperty("baby_trigger_item") NamedApiResource item,
                           @JsonProperty("chain") ChainLink chain) {
-        super(id, "evolution-chain");
+        super(id);
 
         this.item = item;
         this.chain = chain;

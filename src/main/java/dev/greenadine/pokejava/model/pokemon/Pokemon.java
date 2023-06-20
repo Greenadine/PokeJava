@@ -2,6 +2,7 @@ package dev.greenadine.pokejava.model.pokemon;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import dev.greenadine.pokejava.annotation.Category;
 import dev.greenadine.pokejava.model.common.VersionGameIndex;
 import dev.greenadine.pokejava.model.common.resource.NamedApiResource;
 import dev.greenadine.pokejava.model.pokemon.form.PokemonForm;
@@ -16,6 +17,7 @@ import java.util.List;
  * @since 0.1.0
  * @author Greenadine
  */
+@Category("pokemon")
 public class Pokemon extends NamedApiResource {
 
     private final int baseExperience;
@@ -54,7 +56,7 @@ public class Pokemon extends NamedApiResource {
                    @JsonProperty("species") PokemonSpecies species,
                    @JsonProperty("stats") List<PokemonStat> stats,
                    @JsonProperty("types") List<PokemonType> types) {
-        super(id, "pokemon", name);
+        super(id, name);
 
         this.baseExperience = baseExperience;
         this.height = height;

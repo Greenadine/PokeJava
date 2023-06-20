@@ -3,6 +3,7 @@ package dev.greenadine.pokejava.model.pokemon.type;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import dev.greenadine.pokejava.annotation.Category;
 import dev.greenadine.pokejava.model.common.resource.NamedApiResource;
 import dev.greenadine.pokejava.model.common.GenerationGameIndex;
 import dev.greenadine.pokejava.model.common.Name;
@@ -17,6 +18,7 @@ import java.util.List;
  * @since 0.1.0
  * @author Greenadine
  */
+@Category("type")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Type extends NamedApiResource {
 
@@ -38,7 +40,7 @@ public class Type extends NamedApiResource {
                 @JsonProperty("names") List<Name> names,
                 @JsonProperty("pokemon") List<TypePokemon> pokemon,
                 @JsonProperty("moves") List<NamedApiResource> moves) {
-        super(id, "type", name);
+        super(id, name);
 
         this.damageRelations = damageRelations;
         this.gameIndices = gameIndices;

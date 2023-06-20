@@ -1,6 +1,7 @@
 package dev.greenadine.pokejava.model.pokemon.gender;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import dev.greenadine.pokejava.annotation.Category;
 import dev.greenadine.pokejava.model.common.resource.NamedApiResource;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
  * @since 0.1.0
  * @author Greenadine
  */
+@Category("gender")
 public class Gender extends NamedApiResource {
 
     private final List<SpeciesGenderRelation> speciesGenderRelationList;
@@ -20,7 +22,7 @@ public class Gender extends NamedApiResource {
                   @JsonProperty("name") String name,
                   @JsonProperty("pokemon_species_details") List<SpeciesGenderRelation> speciesGenderRelationList,
                   @JsonProperty("required_for_evolution") List<NamedApiResource> requiredForEvolution) {
-        super(id, "gender", name);
+        super(id, name);
 
         this.speciesGenderRelationList = speciesGenderRelationList;
         this.requiredForEvolution = requiredForEvolution;

@@ -2,6 +2,7 @@ package dev.greenadine.pokejava.model.pokemon;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import dev.greenadine.pokejava.annotation.Category;
 import dev.greenadine.pokejava.model.common.Name;
 import dev.greenadine.pokejava.model.common.resource.NamedApiResource;
 
@@ -13,6 +14,7 @@ import java.util.List;
  * @since 0.1.0
  * @author Greenadine
  */
+@Category("egg-group")
 public class EggGroup extends NamedApiResource {
 
     private final List<Name> names;
@@ -23,7 +25,7 @@ public class EggGroup extends NamedApiResource {
                     @JsonProperty("name") String name,
                     @JsonProperty("names") List<Name> names,
                     @JsonProperty("pokemon_species") List<NamedApiResource> pokemonSpecies) {
-        super(id, "egg-group", name);
+        super(id, name);
 
         this.names = names;
         this.pokemonSpecies = pokemonSpecies;

@@ -2,6 +2,7 @@ package dev.greenadine.pokejava.model.pokemon.form;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import dev.greenadine.pokejava.annotation.Category;
 import dev.greenadine.pokejava.model.common.Name;
 import dev.greenadine.pokejava.model.common.resource.NamedApiResource;
 import dev.greenadine.pokejava.model.pokemon.PokemonFormType;
@@ -14,6 +15,7 @@ import java.util.List;
  * @since 0.1.0
  * @author Greenadine
  */
+@Category("pokemon-form")
 public class PokemonForm extends NamedApiResource {
 
     //region Fields
@@ -46,7 +48,7 @@ public class PokemonForm extends NamedApiResource {
                        @JsonProperty("version_group") NamedApiResource versionGroup,
                        @JsonProperty("names") List<Name> names,
                        @JsonProperty("form_names") List<Name> formNames) {
-        super(id, "pokemon-form", name);
+        super(id, name);
 
         this.order = order;
         this.formOrder = formOrder;

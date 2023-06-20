@@ -21,7 +21,7 @@ public class StatTest {
     }
 
     @Test
-    void Get_Type_By_Id() {
+    void Get_Stat_By_Id() {
         Stat stat = API.getStatById(1);
 
         assertEquals(1, stat.getId());
@@ -30,7 +30,7 @@ public class StatTest {
     }
 
     @Test
-    void Get_Type_By_Name() {
+    void Get_Stat_By_Name() {
         Stat stat = API.getStatByName("hp");
 
         assertEquals(1, stat.getId());

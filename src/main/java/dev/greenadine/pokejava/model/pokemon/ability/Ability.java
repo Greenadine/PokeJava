@@ -2,6 +2,7 @@ package dev.greenadine.pokejava.model.pokemon.ability;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import dev.greenadine.pokejava.annotation.Category;
 import dev.greenadine.pokejava.model.common.Name;
 import dev.greenadine.pokejava.model.common.VerboseEffect;
 import dev.greenadine.pokejava.model.common.resource.NamedApiResource;
@@ -14,6 +15,7 @@ import java.util.List;
  * @since 0.1.0
  * @author Greenadine
  */
+@Category("ability")
 public class Ability extends NamedApiResource {
 
     private final boolean isMainSeries;
@@ -33,7 +35,7 @@ public class Ability extends NamedApiResource {
                    @JsonProperty("effect_changes") List<AbilityEffectChange> effectChanges,
                    @JsonProperty("flavor_text_entries") List<AbilityFlavorText> flavorTextEntries,
                    @JsonProperty("pokemon") List<AbilityPokemon> pokemon) {
-        super(id, "ability", name);
+        super(id, name);
 
         this.isMainSeries = isMainSeries;
         this.generation = generation;
