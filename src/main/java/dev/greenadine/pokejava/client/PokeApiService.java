@@ -1,5 +1,8 @@
 package dev.greenadine.pokejava.client;
 
+import dev.greenadine.pokejava.model.common.resource.ApiResourceList;
+import dev.greenadine.pokejava.model.common.resource.NamedApiResourceList;
+import dev.greenadine.pokejava.model.move.MoveLearnMethod;
 import dev.greenadine.pokejava.model.move.MoveTarget;
 import dev.greenadine.pokejava.model.pokemon.*;
 import dev.greenadine.pokejava.model.pokemon.ability.Ability;
@@ -14,8 +17,6 @@ import dev.greenadine.pokejava.model.pokemon.shape.PokemonShape;
 import dev.greenadine.pokejava.model.pokemon.species.PokemonSpecies;
 import dev.greenadine.pokejava.model.pokemon.stat.Stat;
 import dev.greenadine.pokejava.model.pokemon.type.Type;
-import dev.greenadine.pokejava.model.common.resource.ApiResourceList;
-import dev.greenadine.pokejava.model.common.resource.NamedApiResourceList;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -225,6 +226,17 @@ public interface PokeApiService {
 
     @GET("move-target/{name}/")
     Call<MoveTarget> getMoveTargetByName(@Path("name") String name);
+    //endregion
+
+    //region Move learn methods
+    @GET("move-learn-method/")
+    Call<NamedApiResourceList> getMoveLearnMethods(@Query("offset") int offset, @Query("limit") int limit);
+
+    @GET("move-learn-method/{id}/")
+    Call<MoveLearnMethod> getMoveLearnMethodById(@Path("id") int id);
+
+    @GET("move-learn-method/{name}/")
+    Call<MoveLearnMethod> getMoveLearnMethodByName(@Path("name") String name);
     //endregion
 
     //endregion

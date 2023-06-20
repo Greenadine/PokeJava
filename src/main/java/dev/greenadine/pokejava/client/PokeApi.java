@@ -2,6 +2,7 @@ package dev.greenadine.pokejava.client;
 
 import dev.greenadine.pokejava.model.common.resource.ApiResourceList;
 import dev.greenadine.pokejava.model.common.resource.NamedApiResourceList;
+import dev.greenadine.pokejava.model.move.MoveLearnMethod;
 import dev.greenadine.pokejava.model.move.MoveTarget;
 import dev.greenadine.pokejava.model.pokemon.*;
 import dev.greenadine.pokejava.model.pokemon.ability.Ability;
@@ -565,6 +566,37 @@ public interface PokeApi {
      * @return the move target with the specified name.
      */
     MoveTarget getMoveTargetByName(@NotNull String name);
+    //endregion
+
+    //region Move learn methods
+
+    /**
+     * Retrieves a list of move learn methods from the API.
+     *
+     * @param offset the query offset.
+     * @param limit the query limit.
+     *
+     * @return a list of move learn methods.
+     */
+    NamedApiResourceList getMoveLearnMethods(int offset, int limit);
+
+    /**
+     * Retrieves a move learn method with the specified ID from the API.
+     *
+     * @param id the ID of the move learn method.
+     *
+     * @return the move learn method with the specified ID.
+     */
+    MoveLearnMethod getMoveLearnMethodById(int id);
+
+    /**
+     * Retrieves a move learn method with the specified name from the API.
+     *
+     * @param name the name of the move learn method.
+     *
+     * @return the move learn method with the specified name.
+     */
+    MoveLearnMethod getMoveLearnMethodByName(@NotNull String name);
     //endregion
 
     //endregion
