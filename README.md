@@ -1,16 +1,18 @@
 # PokéJava ![](https://img.shields.io/badge/version-v0.1.0--SNAPSHOT-blue?style=flat-square)
-A Java 16+ wrapper for the PokéAPI. 
+A Java 16+ wrapper for the PokéAPI.  
 
-### Currently supported
+### Release
+Version 0.1.0 will be released soon, and will support the following:
 - Pokémons
 - Pokémon species
-- Pokémon formes
-- Pokémon sprites
-- Pokémon habitats
+- Formes
+- Sprites
+- Habitats
 - Evolutions
 - Stats
 - Abilities
 - Types
+- Moves
 - Genders
 - Natures
 - Growth rates
