@@ -34,7 +34,7 @@ dependencies {
 ```
 
 ## Documentation
-* Coming soon
+* [PokeAPI v2 Documentation](https://pokeapi.co/docs/v2)
 * [JavaDocs](https://javadocs.greenadine.dev/pokejava/0.1.0/)
 
 ### Currently supported endpoints:
