@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+    <groupId>dev.greenadine</groupId>
+    <artifactId>pokejava</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>PokéJava</name>
+    <description>Java 17+ wrapper for the PokéAPI.</description>
+    <url>https://github.com/Greenadine/PokeJava</url>
+
+    <developers>
+        <developer>
+            <name>Kevin "Greenadine" Zuman</name>
+            <email>kevin@greenadine.dev</email>
+            <url>https://greenadine.dev</url>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:https://github.com/Greenadine/PokeJava.git</connection>
+        <developerConnection>scm:git:https://github.com/Greenadine/PokeJava.git</developerConnection>
+        <url>https://github.com/Greenadine/PokeJava</url>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>greenadine-releases</id>
+            <url>https://repo.greenadine.dev/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>greenadine-snapshots</id>
+            <url>https://repo.greenadine.dev/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <dependencies>
+        <!-- OkHttp -->
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>4.12.0</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- Retrofit -->
+        <dependency>
+            <groupId>com.squareup.retrofit2</groupId>
+            <artifactId>retrofit</artifactId>
+            <version>2.11.0</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- Retrofit Jackson converter -->
+        <dependency>
+            <groupId>com.squareup.retrofit2</groupId>
+            <artifactId>converter-jackson</artifactId>
+            <version>2.11.0</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- Jackson Databind -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.17.2</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- JetBrains Annotations -->
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>26.0.2</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- JUnit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.12.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- JAR -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.4.2</version>
+                <configuration>
+                    <archive>
+                        <index>true</index>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addClasspath>true</addClasspath>
+                        </manifest>
+                        <manifestEntries>
+                            <url>${project.url}</url>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <!-- Shade -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.5.0</version>
+                <executions>
+                    <execution>
+                        <id>shade-pokejava</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <shadedArtifactAttached>false</shadedArtifactAttached>
+                            <artifactSet>
+                                <includes>
+                                    <include>com.squareup.okhttp3</include>
+                                    <include>com.squareup.retrofit2</include>
+                                    <include>com.fasterxml.jackson.core</include>
+                                    <include>com.fasterxml.jackson.databind</include>
+                                </includes>
+                            </artifactSet>
+                            <relocations>
+                                <relocation>
+                                    <pattern>okhttp3</pattern>
+                                    <shadedPattern>dev.greenadine.pokejava.lib.okhttp3</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>retrofit2</pattern>
+                                    <shadedPattern>dev.greenadine.pokejava.lib.retrofit2</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>com.fasterxml.jackson</pattern>
+                                    <shadedPattern>dev.greenadine.pokejava.lib.jackson</shadedPattern>
+                                </relocation>
+                            </relocations>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- License -->
+            <plugin>
+                <groupId>com.mycila</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <version>4.6</version>
+                <configuration>
+                    <properties>
+                        <year>2025</year>
+                        <owner>Kevin "Greenadine" Zuman</owner>
+                        <email>kevin@greenadine.dev</email>
+                    </properties>
+                    <licenseSets>
+                        <licenseSet>
+                            <header>LICENSE_HEADER.txt</header>
+                            <includes>
+                                <include>**/src/main/**/*.java</include>
+                            </includes>
+                        </licenseSet>
+                    </licenseSets>
+                </configuration>
+            </plugin>
+
+            <!-- Javadoc -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.11.2</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <show>public</show>
+                    <!-- Exclude internal packages -->
+                    <sourceFileExcludes>
+                        <exclude>**/dev/greenadine/pokejava/annotation/*</exclude>
+                        <exclude>**/dev/greenadine/pokejava/util/*</exclude>
+                    </sourceFileExcludes>
+
+                    <windowtitle>${project.name} Javadocs</windowtitle>
+                    <doctitle>${project.name} &amp;ndash; Version ${project.version}</doctitle>
+                    <bottom><![CDATA[Copyright © 2025 Greenadine, licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0.txt">Apache License, Version 2.0</a>. • Pokémon is a trademark of Nintendo Co. Ltd., Creatures Inc., and Game Freak Inc..]]></bottom>
+                    <stylesheetfile>stylesheet.css</stylesheetfile>
+                    <charset>UTF-8</charset>
+                    <encoding>UTF-8</encoding>
+                    <docencoding>UTF-8</docencoding>
+                </configuration>
+            </plugin>
+
+            <!-- Replacer -->
+            <plugin>
+                <groupId>com.google.code.maven-replacer-plugin</groupId>
+                <artifactId>maven-replacer-plugin</artifactId>
+                <version>1.4.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>replace</goal>
+                        </goals>
+                        <configuration>
+                            <!-- Replace in Javadocs -->
+                            <includes>
+                                <include>target/reports/apidocs/**/*.html</include>
+                            </includes>
+                            <regex>false</regex>
+                            <replacements>
+                                <!-- Add favicon reference to head -->
+                                <replacement>
+                                    <token><![CDATA[<head>]]></token>
+                                    <value>
+                                        <![CDATA[
+<head>
+<link rel="icon" type="image/x-icon" href="resources/favicon.ico">
+]]>
+                                    </value>
+                                </replacement>
+
+                                <!-- Fix encoding, as for some reason Javadocs hates me -->
+                                <replacement>
+                                    <token><![CDATA[Ã©]]></token>
+                                    <value><![CDATA[é]]></value>
+                                </replacement>
+
+                                <replacement>
+                                    <token><![CDATA[Â©]]></token>
+                                    <value><![CDATA[©]]></value>
+                                </replacement>
+
+                                <replacement>
+                                    <token><![CDATA[â€¢]]></token>
+                                    <value><![CDATA[•]]></value>
+                                </replacement>
+                            </replacements>
+                            <encoding>UTF-8</encoding>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

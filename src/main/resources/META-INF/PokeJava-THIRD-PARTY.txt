@@ -1,0 +1,13 @@
+PokéJava uses the following third-party projects:
+
+[okhttp3]
+URL: https://github.com/square/okhttp
+License: Apache 2.0 License
+
+[retrofit2]
+URL: https://github.com/square/retrofit
+License: Apache 2.0 License
+
+[jackson-databind]
+URL: https://github.com/FasterXML/jackson-databind
+License: Apache 2.0 License
