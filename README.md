@@ -21,7 +21,6 @@ A simple, complete Java 17+ wrapper for the [PokéAPI](https://pokeapi.co/) with
 ### Gradle
 ```groovy
 repositories {
-    name 'greenadine-releases'
     maven 'https://repo.greenadine.dev/releases/'
 }
 ```
